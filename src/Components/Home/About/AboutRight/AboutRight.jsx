@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const AboutRight = () => {
    return (
       <div className="w-full md:w-2/4">
-         <h3 className="text-md md:text-xl text-secondary">About Us</h3>
+         <h3 className="text-md md:text-xl text-secondary font-semibold">
+            About Us
+         </h3>
          <h1 className="text-3xl lg:text-4xl font-bold py-6">
             The Great Place Of Medical <br /> Hospital Center.
          </h1>
