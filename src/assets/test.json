@@ -1,9 +1,10 @@
 [
    {
       "name": "Dr. John Smith",
-      "photoURL": "https://example.com/doctor1.jpg",
-      "speciality": "Cardiologist",
+      "photoURL": "https://doccure.dreamguystech.com/react/template/bc4e8d916b11472fc805.jpg",
+      "speciality": "653cd499536e0cf207060740",
       "ratings": 4.5,
+      "tagline": "MBBS, MD - General Medicine, DNB",
       "feedback": 120,
       "location": "New York, NY",
       "clinicServices": [
@@ -52,9 +53,10 @@
    },
    {
       "name": "Dr. Emily Johnson",
-      "photoURL": "https://example.com/doctor2.jpg",
-      "speciality": "Dermatologist",
+      "photoURL": "https://doccure.dreamguystech.com/react/template/82a70aca5403c6ff499b.jpg",
+      "speciality": "653d130907d839199e754e71",
       "ratings": 4.8,
+      "tagline": "MBBS, MD - General Medicine, DNB",
       "feedback": 85,
       "location": "Los Angeles, CA",
       "clinicServices": [
@@ -102,9 +104,10 @@
    },
    {
       "name": "Dr. Michael Brown",
-      "photoURL": "https://example.com/doctor3.jpg",
-      "speciality": "Orthopedic Surgeon",
+      "photoURL": "https://doccure.dreamguystech.com/react/template/9109ec39a7b4d06af126.jpg",
+      "speciality": "653d132107d839199e754e73",
       "ratings": 4.7,
+      "tagline": "MBBS, MD - General Medicine, DNB",
       "feedback": 95,
       "location": "Chicago, IL",
       "clinicServices": [
@@ -152,9 +155,10 @@
    },
    {
       "name": "Dr. Sarah Martinez",
-      "photoURL": "https://example.com/doctor4.jpg",
-      "speciality": "Pediatrician",
+      "photoURL": "https://doccure.dreamguystech.com/react/template/7058680646be673ef70f.jpg",
+      "speciality": "653d133307d839199e754e75",
       "ratings": 4.9,
+      "tagline": "MBBS, MD - General Medicine, DNB",
       "feedback": 75,
       "location": "Houston, TX",
       "clinicServices": [
