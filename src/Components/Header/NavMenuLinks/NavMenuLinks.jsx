@@ -4,7 +4,7 @@ import "./style.css";
 const NavMenuLinks = () => {
    return (
       <div className="bg-gray-100 py-2 px-2 rounded-full">
-         <div className="hidden sm:ml-6 sm:block">
+         <div className="hidden sm:mx-6 sm:block">
             <div className="flex space-x-4">
                <NavLink
                   to="/"

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getSingleDoctor } from "../../../APIfetch/ApiFetch";
-import AboutDoctor from "./AboutDoctor";
+import AboutDoctor from "./AboutDoctor/AboutDoctor";
 
 const Profile = () => {
    const { id } = useParams();
