@@ -4,6 +4,7 @@ import About from "../Pages/About/About";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import DoctorProfile from "../Pages/SinglePages/DoctorProfile/DoctorProfile";
 
 const router = createBrowserRouter([
    {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
          {
             path: "/about",
             element: <About />,
+         },
+         {
+            path: "/doctors/:id",
+            element: <DoctorProfile />,
          },
       ],
    },

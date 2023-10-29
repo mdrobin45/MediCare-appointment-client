@@ -6,7 +6,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const DoctorCard = ({ doctor }) => {
-   const { name, photoURL, tagline, feedback, verified, location, price } =
+   const { _id, name, photoURL, tagline, feedback, verified, location, price } =
       doctor;
    return (
       <div className="p-3 rounded-md border">
@@ -41,12 +41,12 @@ const DoctorCard = ({ doctor }) => {
          </div>
          <div className="flex items-center justify-between gap-2">
             <Link
-               to="/"
+               to={`/doctors/${_id}`}
                className="w-2/4 text-center text-md border-2 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-white rounded-md py-1 px-2">
                View Profile
             </Link>
             <Link
-               to="/"
+               to={`/booking/${_id}`}
                className="w-2/4 text-center text-md border-2 border-secondary hover:text-secondary hover:bg-transparent bg-secondary text-white rounded-md py-1 px-2">
                Book Now
             </Link>
