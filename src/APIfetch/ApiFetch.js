@@ -7,3 +7,11 @@ export const getAllDoctors = async () => {
    );
    return response;
 };
+
+// Fetch one doctor
+export const getSingleDoctor = async (id) => {
+   const { data: response } = await axios.get(
+      `${import.meta.env.VITE_SERVER_API}/doctors/${id}`
+   );
+   return response;
+};
