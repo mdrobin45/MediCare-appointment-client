@@ -5,7 +5,10 @@ import {
    TabsBody,
    TabsHeader,
 } from "@material-tailwind/react";
+import Availability from "./Availability/Availability";
+import Locations from "./Locations/Locations";
 import Overview from "./Overview/Overview";
+import Reviews from "./Reviews/Reviews";
 
 const tabList = [
    {
@@ -26,7 +29,7 @@ const tabList = [
       value: "availability",
    },
 ];
-const MoreAboutDoctor = ({ doctor }) => {
+const AboutTabs = ({ doctor }) => {
    return (
       <div className="border p-6 my-16 min-h-[30rem] rounded-md">
          <Tabs value="overview">
@@ -41,10 +44,19 @@ const MoreAboutDoctor = ({ doctor }) => {
                <TabPanel value="overview">
                   <Overview doctor={doctor} />
                </TabPanel>
+               <TabPanel value="locations">
+                  <Locations doctor={doctor} />
+               </TabPanel>
+               <TabPanel value="reviews">
+                  <Reviews doctor={doctor} />
+               </TabPanel>
+               <TabPanel value="availability">
+                  <Availability doctor={doctor} />
+               </TabPanel>
             </TabsBody>
          </Tabs>
       </div>
    );
 };
 
-export default MoreAboutDoctor;
+export default AboutTabs;

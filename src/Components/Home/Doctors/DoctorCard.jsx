@@ -48,7 +48,7 @@ const DoctorCard = ({ doctor }) => {
             <Link
                to={`/booking/${_id}`}
                className="w-2/4 text-center text-md border-2 border-secondary hover:text-secondary hover:bg-transparent bg-secondary text-white rounded-md py-1 px-2">
-               Book Now
+               Appointment
             </Link>
          </div>
       </div>

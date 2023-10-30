@@ -2,7 +2,6 @@ import { BiPlusMedical } from "react-icons/bi";
 
 const Specializations = ({ doctor }) => {
    const { specializations } = doctor;
-   console.log(specializations);
    return (
       <div className="lg:max-w-screen-xl md:max-w-full mx-auto pt-10 sm:max-w-xl">
          <h2 className="text-xl font-bold text-black pb-6">Specializations</h2>
