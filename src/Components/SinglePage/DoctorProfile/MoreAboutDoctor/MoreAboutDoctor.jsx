@@ -28,7 +28,7 @@ const tabList = [
 ];
 const MoreAboutDoctor = ({ doctor }) => {
    return (
-      <div className="border p-6 mt-16 rounded-md">
+      <div className="border p-6 my-16 min-h-[30rem] rounded-md">
          <Tabs value="overview">
             <TabsHeader>
                {tabList.map(({ label, value }) => (
