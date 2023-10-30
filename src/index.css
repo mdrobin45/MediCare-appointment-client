@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-   font-family: "Inter", sans-serif;
+   font-family: "Inter", sans-serif !important;
 }
 p {
    color: #5c728e;
