@@ -1,207 +1,75 @@
-[
-   {
-      "name": "Dr. John Smith",
-      "photoURL": "https://doccure.dreamguystech.com/react/template/bc4e8d916b11472fc805.jpg",
-      "speciality": "653cd499536e0cf207060740",
-      "ratings": 4.5,
-      "tagline": "MBBS, MD - General Medicine, DNB",
-      "feedback": 120,
-      "location": "New York, NY",
-      "clinicServices": [
-         "EKG",
-         "Angiography",
-         "Stress Test",
-         "Cardiac Consultation"
-      ],
-      "price": 150,
-      "bio": "Dr. John Smith is a highly experienced cardiologist with over 15 years of practice in the field. He is dedicated to providing top-notch cardiac care to his patients. Dr. Smith specializes in the diagnosis and treatment of heart-related conditions, including heart disease, hypertension, and arrhythmias. His commitment to patient well-being is evident through his personalized approach and comprehensive treatment plans. Dr. Smith is known for his expertise in interventional cardiology, having performed numerous angioplasties and stent placements. He is passionate about educating his patients on heart health and prevention strategies. Dr. Smith completed his Doctor of Medicine from Harvard Medical School and has been awarded 'Cardiologist of the Year' in July 2010 for his outstanding contributions to cardiology. In addition to his clinical practice, he is involved in research and has authored several publications in renowned medical journals. When not at the clinic, Dr. Smith enjoys spending time with his family and staying active through outdoor activities like hiking and cycling.",
-      "education": [
-         {
-            "institution": "Harvard Medical School",
-            "degree": "Doctor of Medicine",
-            "graduationYear": "2005"
-         },
-         {
-            "institution": "Stanford University",
-            "degree": "Bachelor of Science",
-            "graduationYear": "2001"
-         }
-      ],
-      "experience": [
-         {
-            "title": "Cardiologist",
-            "year": "2006-2012"
-         },
-         {
-            "title": "Senior Cardiologist",
-            "year": "2012-Present"
-         }
-      ],
-      "awards": [
-         {
-            "name": "Cardiologist of the Year",
-            "monthYear": "July 2010",
-            "description": "Awarded for outstanding contributions to cardiology."
-         }
-      ],
-      "services": [
-         "Cardiac Consultation",
-         "Echocardiography",
-         "Hypertension Management"
-      ],
-      "specializations": ["Interventional Cardiology", "Electrophysiology"]
-   },
-   {
-      "name": "Dr. Emily Johnson",
-      "photoURL": "https://doccure.dreamguystech.com/react/template/82a70aca5403c6ff499b.jpg",
-      "speciality": "653d130907d839199e754e71",
-      "ratings": 4.8,
-      "tagline": "MBBS, MD - General Medicine, DNB",
-      "feedback": 85,
-      "location": "Los Angeles, CA",
-      "clinicServices": [
-         "Skin Cancer Screening",
-         "Acne Treatment",
-         "Botox Injections"
-      ],
-      "price": 200,
-      "bio": "Dr. Emily Johnson is a board-certified dermatologist who has dedicated her career to providing exceptional dermatological care. With over a decade of experience, Dr. Johnson specializes in the diagnosis and treatment of a wide range of skin conditions. Her approach is patient-centric, ensuring that each individual receives the most appropriate and effective treatments. Dr. Johnson is known for her expertise in cosmetic dermatology, offering procedures like Botox injections and chemical peels. She completed her Doctor of Medicine from Columbia University in 2008 and earned a Bachelor of Science from the University of California, Berkeley in 2004. In May 2012, Dr. Johnson was honored with the 'Outstanding Dermatologist Award' for her excellence in dermatological care. Apart from her practice, she is actively involved in dermatological research and has published numerous articles in respected journals. During her free time, Dr. Johnson enjoys painting and volunteering for community health initiatives.",
-      "education": [
-         {
-            "institution": "Columbia University",
-            "degree": "Doctor of Medicine",
-            "graduationYear": "2008"
-         },
-         {
-            "institution": "University of California, Berkeley",
-            "degree": "Bachelor of Science",
-            "graduationYear": "2004"
-         }
-      ],
-      "experience": [
-         {
-            "title": "Dermatologist",
-            "year": "2009-2015"
-         },
-         {
-            "title": "Senior Dermatologist",
-            "year": "2015-Present"
-         }
-      ],
-      "awards": [
-         {
-            "name": "Outstanding Dermatologist Award",
-            "monthYear": "May 2012",
-            "description": "Recognized for excellence in dermatological care."
-         }
-      ],
-      "services": [
-         "Dermatological Consultation",
-         "Laser Hair Removal",
-         "Chemical Peels"
-      ],
-      "specializations": ["Cosmetic Dermatology", "Pediatric Dermatology"]
-   },
-   {
-      "name": "Dr. Michael Brown",
-      "photoURL": "https://doccure.dreamguystech.com/react/template/9109ec39a7b4d06af126.jpg",
-      "speciality": "653d132107d839199e754e73",
-      "ratings": 4.7,
-      "tagline": "MBBS, MD - General Medicine, DNB",
-      "feedback": 95,
-      "location": "Chicago, IL",
-      "clinicServices": [
-         "Joint Replacement Surgery",
-         "Fracture Treatment",
-         "Arthroscopy"
-      ],
-      "price": 250,
-      "bio": "Dr. Michael Brown is a skilled orthopedic surgeon with a focus on improving the quality of life for his patients. With over a decade of experience, Dr. Brown is dedicated to providing specialized care in orthopedics. His areas of expertise include joint replacement surgery, fracture treatment, and arthroscopy. Dr. Brown earned his Doctor of Medicine from Johns Hopkins University in 2006 and a Bachelor of Science from the University of Illinois, Urbana-Champaign in 2002. In November 2015, he received the 'Orthopedic Excellence Award' for his outstanding contributions to orthopedic surgery. In addition to his practice, Dr. Brown actively participates in medical research and has contributed to various orthopedic publications. Outside of his professional life, he enjoys playing tennis and supporting local sports teams.",
-      "education": [
-         {
-            "institution": "Johns Hopkins University",
-            "degree": "Doctor of Medicine",
-            "graduationYear": "2006"
-         },
-         {
-            "institution": "University of Illinois, Urbana-Champaign",
-            "degree": "Bachelor of Science",
-            "graduationYear": "2002"
-         }
-      ],
-      "experience": [
-         {
-            "title": "Orthopedic Surgeon",
-            "year": "2007-2013"
-         },
-         {
-            "title": "Senior Orthopedic Surgeon",
-            "year": "2013-Present"
-         }
-      ],
-      "awards": [
-         {
-            "name": "Orthopedic Excellence Award",
-            "monthYear": "November 2015",
-            "description": "Recognized for outstanding contributions to orthopedic surgery."
-         }
-      ],
-      "services": [
-         "Orthopedic Consultation",
-         "Knee Replacement Surgery",
-         "Sports Injury Management"
-      ],
-      "specializations": ["Sports Medicine", "Hand Surgery"]
-   },
-   {
-      "name": "Dr. Sarah Martinez",
-      "photoURL": "https://doccure.dreamguystech.com/react/template/7058680646be673ef70f.jpg",
-      "speciality": "653d133307d839199e754e75",
-      "ratings": 4.9,
-      "tagline": "MBBS, MD - General Medicine, DNB",
-      "feedback": 75,
-      "location": "Houston, TX",
-      "clinicServices": [
-         "Well-Baby Checkups",
-         "Vaccinations",
-         "Pediatric Consultation"
-      ],
-      "price": 180,
-      "bio": "Dr. Sarah Martinez is a caring pediatrician dedicated to the well-being of children and infants. With over a decade of experience, she specializes in pediatric care, including well-baby checkups, vaccinations, and general pediatric consultations. Dr. Martinez's patient-focused approach ensures that young patients receive the best care and guidance for their growth and development. She earned her Doctor of Medicine from Yale School of Medicine in 2009 and a Bachelor of Science from the University of Texas, Austin in 2005. In April 2013, she received the 'Outstanding Pediatrician Award' for her exceptional care of children and infants. In addition to her clinical practice, Dr. Martinez is actively involved in community outreach programs to promote child health and well-being. During her free time, she enjoys reading and participating in local charity events.",
-      "education": [
-         {
-            "institution": "Yale School of Medicine",
-            "degree": "Doctor of Medicine",
-            "graduationYear": "2009"
-         },
-         {
-            "institution": "University of Texas, Austin",
-            "degree": "Bachelor of Science",
-            "graduationYear": "2005"
-         }
-      ],
-      "experience": [
-         {
-            "title": "Pediatrician",
-            "year": "2010-2016"
-         },
-         {
-            "title": "Senior Pediatrician",
-            "year": "2016-Present"
-         }
-      ],
-      "awards": [
-         {
-            "name": "Outstanding Pediatrician Award",
-            "monthYear": "April 2013",
-            "description": "Recognized for exceptional care of children and infants."
-         }
-      ],
-      "services": [
-         "Child Vaccinations",
-         "Newborn Care",
-         "Developmental Screening"
-      ],
-      "specializations": ["Neonatology", "Pediatric Allergy"]
-   }
-]
+{
+   "name": "Dr. Robin Rana",
+   "photoURL": "https://doccure.dreamguystech.com/react/template/bc4e8d916b11472fc805.jpg",
+   "speciality": "653cd499536e0cf207060740",
+   "availability": [
+      {
+         "day": "Sunday",
+         "slots": [
+            { "startTime": "09:00 AM", "endTime": "11:00 AM" },
+            { "startTime": "02:00 PM", "endTime": "04:00 PM" }
+         ]
+      },
+      {
+         "day": "Thursday",
+         "slots": [
+            { "startTime": "10:00 AM", "endTime": "12:00 PM" },
+            { "startTime": "03:00 PM", "endTime": "05:00 PM" }
+         ]
+      },
+      {
+         "day": "Friday",
+         "slots": [
+            { "startTime": "09:30 AM", "endTime": "11:30 AM" },
+            { "startTime": "01:30 PM", "endTime": "03:30 PM" }
+         ]
+      }
+   ],
+   "ratings": 4.5,
+   "tagline": "MBBS, MD - General Medicine, DNB",
+   "feedback": 120,
+   "location": "New York, NY",
+   "clinicServices": [
+      "EKG",
+      "Angiography",
+      "Stress Test",
+      "Cardiac Consultation"
+   ],
+   "price": 150,
+   "bio": "Dr. John Smith is a highly experienced cardiologist with over 15 years of practice in the field. He is dedicated to providing top-notch cardiac care to his patients. Dr. Smith specializes in the diagnosis and treatment of heart-related conditions, including heart disease, hypertension, and arrhythmias. His commitment to patient well-being is evident through his personalized approach and comprehensive treatment plans. Dr. Smith is known for his expertise in interventional cardiology, having performed numerous angioplasties and stent placements. He is passionate about educating his patients on heart health and prevention strategies. Dr. Smith completed his Doctor of Medicine from Harvard Medical School and has been awarded 'Cardiologist of the Year' in July 2010 for his outstanding contributions to cardiology. In addition to his clinical practice, he is involved in research and has authored several publications in renowned medical journals. When not at the clinic, Dr. Smith enjoys spending time with his family and staying active through outdoor activities like hiking and cycling.",
+   "education": [
+      {
+         "institution": "Harvard Medical School",
+         "degree": "Doctor of Medicine",
+         "graduationYear": "2005"
+      },
+      {
+         "institution": "Stanford University",
+         "degree": "Bachelor of Science",
+         "graduationYear": "2001"
+      }
+   ],
+   "experience": [
+      {
+         "title": "Cardiologist",
+         "year": "2006-2012"
+      },
+      {
+         "title": "Senior Cardiologist",
+         "year": "2012-Present"
+      }
+   ],
+   "awards": [
+      {
+         "name": "Cardiologist of the Year",
+         "monthYear": "July 2010",
+         "description": "Awarded for outstanding contributions to cardiology."
+      }
+   ],
+   "services": [
+      "Cardiac Consultation",
+      "Echocardiography",
+      "Hypertension Management"
+   ],
+   "specializations": ["Interventional Cardiology", "Electrophysiology"]
+}

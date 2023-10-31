@@ -1,34 +1,23 @@
+import { format } from "date-fns";
+import moment from "moment/moment";
 import { useState } from "react";
-import DatePicker from "tailwind-datepicker-react";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
+import "./style.css";
 
-// Date picker options
-const option = {
-   autoHide: true,
-   todayBtn: true,
-   clearBtn: true,
-   clearBtnText: "Clear",
-   defaultDate: new Date(),
-   language: "en",
-   weekDays: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-   inputPlaceholderProp: "Select Date",
-   inputDateFormatProp: {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-   },
-};
 const ProfileRight = () => {
-   const [show, setShow] = useState(false);
+   const [selected, setSelected] = useState();
+   if (selected) {
+      console.log(format(selected, "PP"));
+   }
 
-   // Handle date picker change
-   const handleChange = (Date) => {
-      console.log(Date);
+   // Calculate next month
+   const nextMonth = {
+      year: moment().add(1, "months").format("YYYY"),
+      month: moment().add(1, "months").format("MM"),
+      day: moment().add(1, "months").format("DD"),
    };
-
-   // handle close
-   const handleClose = (boolean) => {
-      setShow(boolean);
-   };
+   console.log(nextMonth);
    return (
       <div className="border rounded-b-md sticky top-6">
          <div className="bg-primary text-white p-6 rounded-t-md">
@@ -36,26 +25,16 @@ const ProfileRight = () => {
             <p className="text-gray-300">Monday to Friday: 09:00Am-05:00PM</p>
          </div>
          <div className="p-6">
-            <div className="relative max-w-sm">
-               <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                  <svg
-                     className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                     aria-hidden="true"
-                     xmlns="http://www.w3.org/2000/svg"
-                     fill="currentColor"
-                     viewBox="0 0 20 20">
-                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                  </svg>
-               </div>
-               <DatePicker
-                  options={option}
-                  onChange={handleChange}
-                  show={show}
-                  setShow={handleClose}
-               />
-            </div>
+            <DayPicker
+               mode="single"
+               selected={selected}
+               onSelect={setSelected}
+               fromMonth={new Date()}
+               toDate={new Date(nextMonth.year, nextMonth.month, nextMonth.day)}
+               modifiersClassNames={{ selected: "mySelected" }}
+            />
             <div className="my-6">
-               <ul className="grid grid-cols-4 w-full">
+               <ul className="grid grid-cols-3 gap-y-3 w-full">
                   <li>
                      <input
                         type="radio"
@@ -68,7 +47,7 @@ const ProfileRight = () => {
                      <label
                         htmlFor="hosting-small"
                         className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        Select
+                        09:00 AM
                      </label>
                   </li>
                   <li>
@@ -83,7 +62,7 @@ const ProfileRight = () => {
                      <label
                         htmlFor="hosting-small1"
                         className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        Select
+                        10:00 AM
                      </label>
                   </li>
                   <li>
@@ -98,7 +77,7 @@ const ProfileRight = () => {
                      <label
                         htmlFor="hosting-small1"
                         className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        Select
+                        12:00 AM
                      </label>
                   </li>
                   <li>
@@ -113,7 +92,7 @@ const ProfileRight = () => {
                      <label
                         htmlFor="hosting-small1"
                         className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        Select
+                        04:00 PM
                      </label>
                   </li>
                </ul>

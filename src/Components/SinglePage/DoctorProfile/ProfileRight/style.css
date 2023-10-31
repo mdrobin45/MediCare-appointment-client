@@ -1,0 +1,8 @@
+.mySelected:not([disabled]) {
+   background-color: #007bff;
+   color: white;
+}
+.mySelected:hover:not([disabled]) {
+   color: white;
+   background-color: #007bff !important;
+}
