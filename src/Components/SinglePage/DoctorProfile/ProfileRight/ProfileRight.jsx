@@ -1,23 +1,16 @@
-import { format } from "date-fns";
+import { isBefore } from "date-fns";
 import moment from "moment/moment";
 import { useState } from "react";
-import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import { DatePicker } from "rsuite";
+import "rsuite/dist/rsuite.min.css";
 import "./style.css";
 
 const ProfileRight = () => {
-   const [selected, setSelected] = useState();
-   if (selected) {
-      console.log(format(selected, "PP"));
-   }
+   const [selected, setSelected] = useState(new Date());
+   const pastDate = moment().format("YYYY-MM-DD");
 
-   // Calculate next month
-   const nextMonth = {
-      year: moment().add(1, "months").format("YYYY"),
-      month: moment().add(1, "months").format("MM"),
-      day: moment().add(1, "months").format("DD"),
-   };
-   console.log(nextMonth);
+   console.log(selected);
    return (
       <div className="border rounded-b-md sticky top-6">
          <div className="bg-primary text-white p-6 rounded-t-md">
@@ -25,13 +18,14 @@ const ProfileRight = () => {
             <p className="text-gray-300">Monday to Friday: 09:00Am-05:00PM</p>
          </div>
          <div className="p-6">
-            <DayPicker
-               mode="single"
-               selected={selected}
-               onSelect={setSelected}
-               fromMonth={new Date()}
-               toDate={new Date(nextMonth.year, nextMonth.month, nextMonth.day)}
-               modifiersClassNames={{ selected: "mySelected" }}
+            <DatePicker
+               value={selected}
+               onChange={setSelected}
+               shouldDisableDate={(date) => isBefore(date, new Date(pastDate))}
+               placeholder="Select Date"
+               format="dd-MM-yyyy"
+               oneTap
+               style={{ width: "100%" }}
             />
             <div className="my-6">
                <ul className="grid grid-cols-3 gap-y-3 w-full">
