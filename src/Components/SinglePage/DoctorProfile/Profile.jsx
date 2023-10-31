@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getSingleDoctor } from "../../../APIfetch/ApiFetch";
 import ProfileLeft from "./ProfileLeft/ProfileLeft";
+import ProfileRight from "./ProfileRight/ProfileRight";
 
 const Profile = () => {
    const { id } = useParams();
@@ -20,7 +21,7 @@ const Profile = () => {
                   <ProfileLeft doctor={data} />
                </div>
                <div className="w-1/3">
-                  <h2>Right</h2>
+                  <ProfileRight />
                </div>
             </div>
          ) : (
