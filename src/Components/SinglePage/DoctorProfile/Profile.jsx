@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getSingleDoctor } from "../../../APIfetch/ApiFetch";
-import AboutDoctor from "./AboutDoctor/AboutDoctor";
-import AboutTabs from "./AboutTabs/AboutTabs";
+import ProfileLeft from "./ProfileLeft/ProfileLeft";
 
 const Profile = () => {
    const { id } = useParams();
@@ -14,16 +13,20 @@ const Profile = () => {
    });
 
    return (
-      <div>
+      <>
          {!isPending ? (
-            <>
-               <AboutDoctor doctor={data} />
-               <AboutTabs doctor={data} />
-            </>
+            <div className="flex gap-3 mt-16">
+               <div className="w-2/3">
+                  <ProfileLeft doctor={data} />
+               </div>
+               <div className="w-1/3">
+                  <h2>Right</h2>
+               </div>
+            </div>
          ) : (
             <span>Loading</span>
          )}
-      </div>
+      </>
    );
 };
 
