@@ -1,6 +1,6 @@
 {
    "name": "Dr. Robin Rana",
-   "photoURL": "https://doccure.dreamguystech.com/react/template/bc4e8d916b11472fc805.jpg",
+   "photoURL": "https://doccure.dreamguystech.com/react/template/4c4edf4d3fc07e7acd8f.jpg",
    "speciality": "653cd499536e0cf207060740",
    "availability": [
       {
@@ -67,9 +67,18 @@
       }
    ],
    "services": [
-      "Cardiac Consultation",
-      "Echocardiography",
-      "Hypertension Management"
+      {
+         "name": "Cardiac Consultation",
+         "price": "50"
+      },
+      {
+         "name": "Echocardiography",
+         "price": "40"
+      },
+      {
+         "name": "Hypertension Management",
+         "price": "60"
+      }
    ],
    "specializations": ["Interventional Cardiology", "Electrophysiology"]
 }

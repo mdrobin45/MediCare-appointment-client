@@ -35,7 +35,7 @@ const AboutDoctor = ({ doctor }) => {
                      <p
                         key={id}
                         className="border py-1 px-2 text-sm rounded-md">
-                        {service}
+                        {service.name}
                      </p>
                   ))}
                </div>

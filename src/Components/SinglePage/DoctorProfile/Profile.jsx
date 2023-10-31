@@ -21,7 +21,7 @@ const Profile = () => {
                   <ProfileLeft doctor={data} />
                </div>
                <div className="w-1/3">
-                  <ProfileRight />
+                  <ProfileRight doctor={data} />
                </div>
             </div>
          ) : (

@@ -3,7 +3,7 @@ import axios from "axios";
 // Fetch all doctors
 export const getAllDoctors = async () => {
    const { data: response } = await axios.get(
-      `${import.meta.env.VITE_SERVER_API}/doctors`
+      `${import.meta.env.VITE_SERVER_API}/doctor`
    );
    return response;
 };
@@ -11,7 +11,7 @@ export const getAllDoctors = async () => {
 // Fetch one doctor
 export const getSingleDoctor = async (id) => {
    const { data: response } = await axios.get(
-      `${import.meta.env.VITE_SERVER_API}/doctors/${id}`
+      `${import.meta.env.VITE_SERVER_API}/doctor/${id}`
    );
    return response;
 };

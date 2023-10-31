@@ -11,7 +11,7 @@ const Services = ({ doctor }) => {
                   <span>
                      <BiPlusMedical className="text-secondary" />
                   </span>
-                  <span>{item}</span>
+                  <span>{item.name}</span>
                </p>
             ))}
          </div>

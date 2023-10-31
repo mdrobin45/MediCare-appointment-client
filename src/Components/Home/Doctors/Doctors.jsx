@@ -22,7 +22,7 @@ const Doctors = () => {
          setDoctors(reversed);
       }
    }, [data, isPending]);
-   console.log(doctors);
+
    return (
       <div className="px-2 sm:px-6 lg:px-8 py-16">
          <SectionHeader title="Meet Our Expert Doctor" subtitle="Our Doctors" />

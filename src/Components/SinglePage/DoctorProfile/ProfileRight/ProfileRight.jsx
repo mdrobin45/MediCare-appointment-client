@@ -6,11 +6,44 @@ import { DatePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import "./style.css";
 
-const ProfileRight = () => {
-   const [selected, setSelected] = useState(new Date());
-   const pastDate = moment().format("YYYY-MM-DD");
+const ProfileRight = ({ doctor }) => {
+   const [selectedService, setSelectedService] = useState([]);
+   const [selectedDate, setSelectedDate] = useState(new Date());
+   const [time, setTime] = useState({});
+   const [formData, setFormData] = useState({});
 
-   console.log(selected);
+   const pastDate = moment().format("YYYY-MM-DD");
+   const meetDate = moment(selectedDate).format("DD MMM YYYY");
+   const selectedDay = moment(selectedDate).format("dddd");
+   const { services, availability } = doctor;
+
+   // Handle change and get input user value
+   const handleChange = (e) => {
+      const { value, checked } = e.target;
+      // setTime((prevData) => ({ ...prevData, [name]: value }));
+
+      const checkedService = services.find((item) => item.name === value);
+
+      if (checked) {
+         setSelectedService((prevData) => [...prevData, checkedService]);
+      } else {
+         setSelectedService(
+            selectedService.filter((item) => item.name !== value)
+         );
+      }
+   };
+
+   // handle submit
+   const handleSubmit = () => {
+      setFormData((prevData) => ({
+         ...prevData,
+         time,
+         meetDate,
+         selectedService,
+      }));
+   };
+
+   console.log(formData);
    return (
       <div className="border rounded-b-md sticky top-6">
          <div className="bg-primary text-white p-6 rounded-t-md">
@@ -19,8 +52,8 @@ const ProfileRight = () => {
          </div>
          <div className="p-6">
             <DatePicker
-               value={selected}
-               onChange={setSelected}
+               value={selectedDate}
+               onChange={setSelectedDate}
                shouldDisableDate={(date) => isBefore(date, new Date(pastDate))}
                placeholder="Select Date"
                format="dd-MM-yyyy"
@@ -29,102 +62,61 @@ const ProfileRight = () => {
             />
             <div className="my-6">
                <ul className="grid grid-cols-3 gap-y-3 w-full">
-                  <li>
-                     <input
-                        type="radio"
-                        id="hosting-small"
-                        name="hosting"
-                        value="hosting-small"
-                        className="hidden peer"
-                        required
-                     />
-                     <label
-                        htmlFor="hosting-small"
-                        className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        09:00 AM
-                     </label>
-                  </li>
-                  <li>
-                     <input
-                        type="radio"
-                        id="hosting-small1"
-                        name="hosting"
-                        value="hosting-small"
-                        className="hidden peer"
-                        required
-                     />
-                     <label
-                        htmlFor="hosting-small1"
-                        className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        10:00 AM
-                     </label>
-                  </li>
-                  <li>
-                     <input
-                        type="radio"
-                        id="hosting-small1"
-                        name="hosting"
-                        value="hosting-small"
-                        className="hidden peer"
-                        required
-                     />
-                     <label
-                        htmlFor="hosting-small1"
-                        className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        12:00 AM
-                     </label>
-                  </li>
-                  <li>
-                     <input
-                        type="radio"
-                        id="hosting-small1"
-                        name="hosting"
-                        value="hosting-small"
-                        className="hidden peer"
-                        required
-                     />
-                     <label
-                        htmlFor="hosting-small1"
-                        className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        04:00 PM
-                     </label>
-                  </li>
+                  {availability.map(
+                     (item) =>
+                        item.day === selectedDay &&
+                        item.slots.map((time, id) => (
+                           <li key={id}>
+                              <input
+                                 onChange={() => {
+                                    setTime((prevData) => ({
+                                       ...prevData,
+                                       time: time.startTime,
+                                    }));
+                                 }}
+                                 type="radio"
+                                 id={time.startTime}
+                                 name="time"
+                                 value={time.startTime}
+                                 className="hidden peer"
+                                 required
+                              />
+                              <label
+                                 htmlFor={time.startTime}
+                                 className="inline-flex items-center justify-between py-2 px-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                 {time.startTime}
+                              </label>
+                           </li>
+                        ))
+                  )}
                </ul>
             </div>
             <hr />
             <h3 className="text-xl font-bold mt-4">Choose Service</h3>
 
-            <div className="flex items-center my-3 pl-4 border border-gray-200 rounded dark:border-gray-700">
-               <input
-                  id="bordered-checkbox-1"
-                  type="checkbox"
-                  value="40"
-                  name="bordered-checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-               />
-               <label
-                  htmlFor="bordered-checkbox-1"
-                  className="w-full flex items-center justify-between py-4 px-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  <span>Default radio</span>
-                  <span>$40</span>
-               </label>
-            </div>
-            <div className="flex items-center my-3 pl-4 border border-gray-200 rounded dark:border-gray-700">
-               <input
-                  id="bordered-checkbox-2"
-                  type="checkbox"
-                  value="40"
-                  name="bordered-checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-               />
-               <label
-                  htmlFor="bordered-checkbox-2"
-                  className="w-full flex items-center justify-between py-4 px-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  <span>Default radio</span>
-                  <span>$40</span>
-               </label>
-            </div>
-            <button className="w-full mt-6 block text-center text-md border-2 border-secondary hover:text-secondary hover:bg-transparent bg-secondary text-white rounded-md py-3">
+            {services.map((service, id) => (
+               <div
+                  key={id}
+                  className="flex items-center my-3 pl-4 border border-gray-200 rounded dark:border-gray-700">
+                  <input
+                     id={service.name}
+                     type="checkbox"
+                     value={service.name}
+                     onChange={handleChange}
+                     name={service.name}
+                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                  />
+                  <label
+                     htmlFor={service.name}
+                     className="w-full flex items-center justify-between py-4 px-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                     <span>{service.name}</span>
+                     <span>{service.price}</span>
+                  </label>
+               </div>
+            ))}
+            <button
+               onClick={handleSubmit}
+               className="w-full mt-6 block text-center text-md border-2 border-secondary hover:text-secondary hover:bg-transparent bg-secondary text-white rounded-md py-3">
                Book Appointment
             </button>
          </div>
