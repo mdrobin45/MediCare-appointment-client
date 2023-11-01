@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Dashboard from "../Pages/PatientDashboard/Dashboard";
 import Register from "../Pages/Register/Register";
 import DoctorProfile from "../Pages/SinglePages/DoctorProfile/DoctorProfile";
+import PatientLayout from "../PatientLayout/PatientLayout";
 
 const router = createBrowserRouter([
    {
@@ -19,28 +20,38 @@ const router = createBrowserRouter([
             element: <Home />,
          },
          {
-            path: "login",
+            path: "/login",
             element: <Login />,
          },
          {
-            path: "register",
+            path: "/register",
             element: <Register />,
          },
          {
-            path: "about",
+            path: "/about",
             element: <About />,
          },
          {
-            path: "booking",
+            path: "/booking",
             element: <Booking />,
          },
          {
-            path: "patient/dashboard",
+            path: "/doctors/:id",
+            element: <DoctorProfile />,
+         },
+      ],
+   },
+   {
+      path: "/patient",
+      element: <PatientLayout />,
+      children: [
+         {
+            index: true,
             element: <Dashboard />,
          },
          {
-            path: "doctors/:id",
-            element: <DoctorProfile />,
+            path: "dashboard",
+            element: <Dashboard />,
          },
       ],
    },

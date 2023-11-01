@@ -25,6 +25,14 @@ export const postAppointment = async (data) => {
    return response;
 };
 
+// Fetch appointments by user
+export const getUserAppointments = async (email) => {
+   const { data: response } = await axios.get(
+      `${import.meta.env.VITE_SERVER_API}/appointment/all?email=${email}`
+   );
+   return response;
+};
+
 // Generate token
 export const generateToken = async (data) => {
    const { data: response } = await axios.post(
