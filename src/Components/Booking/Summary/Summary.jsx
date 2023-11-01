@@ -8,7 +8,7 @@ const Summary = () => {
    const total = selectedService.reduce((accumulator, object) => {
       return accumulator + parseFloat(object.price);
    }, 0);
-   console.log(state);
+
    return (
       <div className="w-1/3 border rounded-b-md sticky top-6">
          <div className="bg-primary text-white p-6 rounded-t-md">
