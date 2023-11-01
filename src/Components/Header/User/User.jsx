@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { BiLogInCircle, BiPlusMedical } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../MyContext/AuthContextProvider";
+import useAuth from "../../../Hooks/useAuth";
 import UserDropdown from "./userDropdown";
 
 const User = () => {
    const [showUserDropdown, setShowUserDropdown] = useState(false);
-   const { user } = useContext(AuthContext);
+   const { user } = useAuth();
 
    return (
       <>

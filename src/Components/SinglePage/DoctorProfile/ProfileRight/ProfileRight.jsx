@@ -1,7 +1,8 @@
 import { isBefore } from "date-fns";
 import moment from "moment/moment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "react-day-picker/dist/style.css";
+import { useNavigate } from "react-router-dom";
 import { DatePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import "./style.css";
@@ -9,8 +10,9 @@ import "./style.css";
 const ProfileRight = ({ doctor }) => {
    const [selectedService, setSelectedService] = useState([]);
    const [selectedDate, setSelectedDate] = useState(new Date());
-   const [time, setTime] = useState({});
    const [formData, setFormData] = useState({});
+   const [time, setTime] = useState("");
+   const navigate = useNavigate();
 
    const pastDate = moment().format("YYYY-MM-DD");
    const meetDate = moment(selectedDate).format("DD MMM YYYY");
@@ -18,9 +20,8 @@ const ProfileRight = ({ doctor }) => {
    const { services, availability } = doctor;
 
    // Handle change and get input user value
-   const handleChange = (e) => {
+   const handleServiceChange = (e) => {
       const { value, checked } = e.target;
-      // setTime((prevData) => ({ ...prevData, [name]: value }));
 
       const checkedService = services.find((item) => item.name === value);
 
@@ -33,17 +34,28 @@ const ProfileRight = ({ doctor }) => {
       }
    };
 
-   // handle submit
-   const handleSubmit = () => {
+   // Handle time change
+   const handleTimeChange = (e) => {
+      const { value } = e.target;
+      setTime(value);
+   };
+
+   // Update final form data
+   useEffect(() => {
       setFormData((prevData) => ({
          ...prevData,
          time,
          meetDate,
          selectedService,
       }));
+   }, [meetDate, selectedService, time]);
+
+   // handle submit
+   const handleSubmit = () => {
+      // Navigate to appointment page
+      navigate("/booking", { state: formData });
    };
 
-   console.log(formData);
    return (
       <div className="border rounded-b-md sticky top-6">
          <div className="bg-primary text-white p-6 rounded-t-md">
@@ -68,12 +80,7 @@ const ProfileRight = ({ doctor }) => {
                         item.slots.map((time, id) => (
                            <li key={id}>
                               <input
-                                 onChange={() => {
-                                    setTime((prevData) => ({
-                                       ...prevData,
-                                       time: time.startTime,
-                                    }));
-                                 }}
+                                 onChange={handleTimeChange}
                                  type="radio"
                                  id={time.startTime}
                                  name="time"
@@ -102,7 +109,7 @@ const ProfileRight = ({ doctor }) => {
                      id={service.name}
                      type="checkbox"
                      value={service.name}
-                     onChange={handleChange}
+                     onChange={handleServiceChange}
                      name={service.name}
                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
