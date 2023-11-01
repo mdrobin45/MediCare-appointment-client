@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PageHeader = ({ title }) => {
    return (
       <div
-         className="px-10 md:px-20 pt-32 pb-20 text-center md:text-left lg:pb-28"
+         className="px-2 sm:px-6 lg:px-8 pt-32 pb-20 text-center md:text-left lg:pb-28"
          style={{
             background: `linear-gradient(rgba(45,55,60,0.9) 100%,rgba(45,55,60,0.9) 100%), url(https://html.themefax.com/madifax/images/breadcrumb_bg.jpg)`,
             backgroundPosition: "center center",

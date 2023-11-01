@@ -17,7 +17,7 @@ const ProfileRight = ({ doctor }) => {
    const pastDate = moment().format("YYYY-MM-DD");
    const meetDate = moment(selectedDate).format("DD MMM YYYY");
    const selectedDay = moment(selectedDate).format("dddd");
-   const { services, availability } = doctor;
+   const { name, services, availability } = doctor;
 
    // Handle change and get input user value
    const handleServiceChange = (e) => {
@@ -46,9 +46,10 @@ const ProfileRight = ({ doctor }) => {
          ...prevData,
          time,
          meetDate,
+         doctorName: name,
          selectedService,
       }));
-   }, [meetDate, selectedService, time]);
+   }, [meetDate, selectedService, time, name]);
 
    // handle submit
    const handleSubmit = () => {
