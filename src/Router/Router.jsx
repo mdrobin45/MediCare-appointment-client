@@ -4,6 +4,7 @@ import About from "../Pages/About/About";
 import Booking from "../Pages/Booking/Booking";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import Dashboard from "../Pages/PatientDashboard/Dashboard";
 import Register from "../Pages/Register/Register";
 import DoctorProfile from "../Pages/SinglePages/DoctorProfile/DoctorProfile";
 
@@ -18,23 +19,27 @@ const router = createBrowserRouter([
             element: <Home />,
          },
          {
-            path: "/login",
+            path: "login",
             element: <Login />,
          },
          {
-            path: "/register",
+            path: "register",
             element: <Register />,
          },
          {
-            path: "/about",
+            path: "about",
             element: <About />,
          },
          {
-            path: "/booking",
+            path: "booking",
             element: <Booking />,
          },
          {
-            path: "/doctors/:id",
+            path: "patient/dashboard",
+            element: <Dashboard />,
+         },
+         {
+            path: "doctors/:id",
             element: <DoctorProfile />,
          },
       ],

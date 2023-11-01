@@ -16,11 +16,21 @@ export const getSingleDoctor = async (id) => {
    return response;
 };
 
-// Fetch one doctor
+// Post appointment
 export const postAppointment = async (data) => {
    const { data: response } = await axios.post(
       `${import.meta.env.VITE_SERVER_API}/appointment`,
       data
+   );
+   return response;
+};
+
+// Generate token
+export const generateToken = async (data) => {
+   const { data: response } = await axios.post(
+      `${import.meta.env.VITE_SERVER_API}/token`,
+      data,
+      { withCredentials: true }
    );
    return response;
 };

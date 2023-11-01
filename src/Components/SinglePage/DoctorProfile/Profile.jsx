@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { getSingleDoctor } from "../../../APIfetch/ApiFetch";
+import { getSingleDoctor } from "../../../Api/Api";
 import ProfileLeft from "./ProfileLeft/ProfileLeft";
 import ProfileRight from "./ProfileRight/ProfileRight";
 

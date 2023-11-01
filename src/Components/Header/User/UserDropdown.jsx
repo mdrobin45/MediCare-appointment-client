@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../MyContext/AuthContextProvider";
 
@@ -22,10 +23,15 @@ const UserDropdown = ({ showUserDropdown }) => {
                {user.email && user.email}
             </div>
          </div>
-         <div className="py-1">
+         <Link
+            to="/patient/dashboard"
+            className="block rounded-lg w-full uppercase text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            My Profile
+         </Link>
+         <div>
             <button
                onClick={handleLogOut}
-               className="block w-full font-barlow uppercase text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+               className="block rounded-lg w-full uppercase text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                Sign Out
             </button>
          </div>

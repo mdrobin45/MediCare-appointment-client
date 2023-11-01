@@ -1,20 +1,26 @@
 import { useMutation } from "@tanstack/react-query";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { postAppointment } from "../../APIfetch/ApiFetch";
+import { postAppointment } from "../../Api/Api";
 import useAuth from "../../Hooks/useAuth";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
+import PaymentSuccess from "./PaymentSuccess";
 import Summary from "./Summary/Summary";
 
 const BookingLayout = () => {
    const { user } = useAuth();
    const { state } = useLocation();
+   const [modalOpen, setModalOpen] = useState(false);
    const { meetDate, meetTime, doctorId, selectedService } = state;
 
    // Calculate services price
    const total = selectedService.reduce((accumulator, object) => {
       return accumulator + parseFloat(object.price);
    }, 0);
+
+   // Today date
+   const currentDate = moment(new Date()).format("DD MMM YYYY");
 
    // Appointment data
    const [formData, setFormData] = useState({
@@ -28,6 +34,7 @@ const BookingLayout = () => {
       note: "",
       meetTime,
       meetDate,
+      bookingDate: currentDate,
       doctor: doctorId,
       price: total,
       adminStatus: "active",
@@ -55,7 +62,9 @@ const BookingLayout = () => {
    const { mutate, isPending } = useMutation({
       mutationFn: () => postAppointment(formData),
       onSuccess: async (data) => {
-         console.log(data);
+         if (data.id) {
+            alert("Payment successful");
+         }
       },
    });
 
@@ -66,6 +75,7 @@ const BookingLayout = () => {
 
    return (
       <div className="px-2 mt-10 sm:px-6 lg:px-8 flex justify-between gap-10">
+         <PaymentSuccess open={modalOpen} setClose={setModalOpen} />
          <AppointmentForm
             formData={formData}
             setFormData={setFormData}
