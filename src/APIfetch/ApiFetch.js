@@ -15,3 +15,12 @@ export const getSingleDoctor = async (id) => {
    );
    return response;
 };
+
+// Fetch one doctor
+export const postAppointment = async (data) => {
+   const { data: response } = await axios.post(
+      `${import.meta.env.VITE_SERVER_API}/appointment`,
+      data
+   );
+   return response;
+};
