@@ -16,6 +16,16 @@ export const getSingleDoctor = async (id) => {
    return response;
 };
 
+// Fetch doctors by page number
+export const loadCurrentPageDoctor = async (pageNumber, pageSize) => {
+   const { data: response } = await axios.get(
+      `${
+         import.meta.env.VITE_SERVER_API
+      }/doctor/paginated?pageNumber=${pageNumber}&pageSize=${pageSize}`
+   );
+   return response;
+};
+
 // Post appointment
 export const postAppointment = async (data) => {
    const { data: response } = await axios.post(

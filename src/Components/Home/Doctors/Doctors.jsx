@@ -11,9 +11,8 @@ const Doctors = () => {
    // Slice 8 doctors
    useEffect(() => {
       if (!isPending) {
-         const slicedData = doctors.slice(-8);
-         const reversed = slicedData.reverse();
-         setHomeDoctors(reversed);
+         const slicedData = doctors.slice(0, 8);
+         setHomeDoctors(slicedData);
       }
    }, [doctors, isPending]);
 
