@@ -28,7 +28,8 @@ export const postAppointment = async (data) => {
 // Fetch appointments by user
 export const getUserAppointments = async (email) => {
    const { data: response } = await axios.get(
-      `${import.meta.env.VITE_SERVER_API}/appointment/all?email=${email}`
+      `${import.meta.env.VITE_SERVER_API}/appointment/all?userEmail=${email}`,
+      { withCredentials: true }
    );
    return response;
 };
@@ -38,6 +39,15 @@ export const generateToken = async (data) => {
    const { data: response } = await axios.post(
       `${import.meta.env.VITE_SERVER_API}/token`,
       data,
+      { withCredentials: true }
+   );
+   return response;
+};
+
+// Logout user and clear token
+export const clearToken = async () => {
+   const { data: response } = await axios.post(
+      `${import.meta.env.VITE_SERVER_API}/logout`,
       { withCredentials: true }
    );
    return response;

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { generateToken } from "../../Api/Api";
 import { AuthContext } from "../../MyContext/AuthContextProvider";
 
 const GoogleSignIn = () => {
@@ -15,15 +14,6 @@ const GoogleSignIn = () => {
          .then((result) => {
             if (result.user) {
                const toastMsg = toast.loading("");
-
-               const { displayName, email } = result.user;
-
-               // Server token request
-               generateToken({
-                  name: displayName,
-                  email: email,
-               });
-
                toast.update(toastMsg, {
                   render: "Login Successful!",
                   type: "success",

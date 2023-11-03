@@ -1,17 +1,28 @@
-import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { getUserAppointments } from "../../Api/Api";
 import useAuth from "../../Hooks/useAuth";
 
 const Dashboard = () => {
    const { user } = useAuth();
+   const email = user && user.email;
 
-   useEffect(() => {
-      getUserAppointments(user && user.email).then((res) => console.log(res));
-   }, [user]);
-   console.log(user);
+   // Load appointment with tan stack query
+   const { isPending, data } = useQuery({
+      queryKey: ["user", email],
+      queryFn: () => getUserAppointments(email),
+   });
+
    return (
       <div>
-         <h2>Dashboard</h2>
+         {!isPending ? (
+            <div>
+               {data.map((item, index) => (
+                  <span key={index}>{item.name}</span>
+               ))}
+            </div>
+         ) : (
+            "Loading"
+         )}
       </div>
    );
 };

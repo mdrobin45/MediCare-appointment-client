@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { generateToken } from "../../Api/Api";
 import { AuthContext } from "../../MyContext/AuthContextProvider";
 import GoogleSignIn from "../FormFields/GoogleSignIn";
 import PasswordField from "../FormFields/PasswordField";
@@ -37,14 +36,6 @@ const LoginForm = () => {
       loginWithEmailPassword(formData.email, formData.password)
          .then((result) => {
             if (result.user) {
-               const { displayName, email } = result.user;
-
-               // Server token request
-               generateToken({
-                  name: displayName,
-                  email: email,
-               });
-
                // Update toast
                toast.update(toastMsg, {
                   render: "Login Successful!",
