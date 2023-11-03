@@ -1,27 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAllDoctors } from "../../../Api/Api";
+import useDoctors from "../../../Hooks/useDoctors";
 import SectionHeader from "../../SectionHeader/SectionHeader";
 import DoctorCard from "./DoctorCard";
 
 const Doctors = () => {
-   const [doctors, setDoctors] = useState([]);
-
-   // Fetch with tan stack query
-   const { isPending, data } = useQuery({
-      queryKey: ["doctors"],
-      queryFn: getAllDoctors,
-   });
+   const [homeDoctors, setHomeDoctors] = useState([]);
+   const { doctors, isPending } = useDoctors();
 
    // Slice 8 doctors
    useEffect(() => {
       if (!isPending) {
-         const slicedData = data.slice(-8);
+         const slicedData = doctors.slice(-8);
          const reversed = slicedData.reverse();
-         setDoctors(reversed);
+         setHomeDoctors(reversed);
       }
-   }, [data, isPending]);
+   }, [doctors, isPending]);
 
    return (
       <div className="px-2 sm:px-6 lg:px-8 py-16">
@@ -29,7 +23,7 @@ const Doctors = () => {
          {!isPending ? (
             <>
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-6">
-                  {doctors.map((item) => (
+                  {homeDoctors.map((item) => (
                      <DoctorCard key={item._id} doctor={item} />
                   ))}
                </div>
