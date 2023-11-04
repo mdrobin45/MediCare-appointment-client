@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import DoctorCard from "../../../Components/DoctorCard/DoctorCard";
+import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
 import useDoctors from "../../../Hooks/useDoctors";
-import SectionHeader from "../../SectionHeader/SectionHeader";
-import DoctorCard from "./DoctorCard";
 
 const Doctors = () => {
    const [homeDoctors, setHomeDoctors] = useState([]);

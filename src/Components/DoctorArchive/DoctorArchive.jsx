@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { loadCurrentPageDoctor } from "../../Api/Api";
-import DoctorCard from "../Home/Doctors/DoctorCard";
+import DoctorCard from "../DoctorCard/DoctorCard";
 import Pagination from "../Pagination/Pagination";
 
 const DoctorArchive = () => {
