@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DoctorCard from "../../../Components/DoctorCard/DoctorCard";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
 import useDoctors from "../../../Hooks/useDoctors";
 
 const Doctors = () => {
-   const [homeDoctors, setHomeDoctors] = useState([]);
-   const { doctors, isPending } = useDoctors();
-
-   // Slice 8 doctors
-   useEffect(() => {
-      if (!isPending) {
-         const slicedData = doctors.slice(0, 8);
-         setHomeDoctors(slicedData);
-      }
-   }, [doctors, isPending]);
+   const { isPending, homeDoctors } = useDoctors();
 
    return (
       <div className="px-2 sm:px-6 lg:px-8 py-16">

@@ -1,44 +1,7 @@
-import { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { AuthContext } from "../../MyContext/AuthContextProvider";
+import useGoogleSignIn from "../../Hooks/useGoogleSignIn";
 
 const GoogleSignIn = () => {
-   const { loginWithGoogle } = useContext(AuthContext);
-   const { state } = useLocation();
-   const navigate = useNavigate();
-
-   // Handle signIn with google
-   const handleGoogleSignIn = () => {
-      loginWithGoogle()
-         .then((result) => {
-            if (result.user) {
-               const toastMsg = toast.loading("");
-               toast.update(toastMsg, {
-                  render: "Login Successful!",
-                  type: "success",
-                  isLoading: false,
-                  autoClose: 1500,
-               });
-               if (state !== null) {
-                  navigate(state.prevUrl);
-               } else {
-                  navigate("/");
-               }
-            }
-         })
-         .catch((err) => {
-            if (err) {
-               const toastMsg = toast.loading("");
-               toast.update(toastMsg, {
-                  render: "Something went wrong!",
-                  type: "error",
-                  isLoading: false,
-                  autoClose: 1500,
-               });
-            }
-         });
-   };
+   const handleGoogleSignIn = useGoogleSignIn();
 
    return (
       <button
