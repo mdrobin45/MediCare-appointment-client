@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import AuthFormFooter from "../../Components/AuthFormFooter/AuthFormFooter";
+import AuthFormHeader from "../../Components/AuthFormHeader/AuthFormHeader";
+import FormSubmit from "../../Components/InputFields/FormSubmit";
+import GoogleSignIn from "../../Components/InputFields/GoogleSignIn";
+import PasswordField from "../../Components/InputFields/PasswordField";
+import TextField from "../../Components/InputFields/TextField";
 import { AuthContext } from "../../MyContext/AuthContextProvider";
-import GoogleSignIn from "../FormFields/GoogleSignIn";
-import PasswordField from "../FormFields/PasswordField";
-import TextField from "../FormFields/TextField";
 
 const LoginForm = () => {
    const { loginWithEmailPassword } = useContext(AuthContext);
@@ -65,8 +68,7 @@ const LoginForm = () => {
    return (
       <div className="flex h-[80vh] flex-col justify-center items-center">
          <div className="mx-auto w-[26rem] border rounded-md shadow-md">
-            <h2 className="text-2xl px-6 pt-3 pb-3 font-bold">Sign In</h2>
-            <hr />
+            <AuthFormHeader heading="Sign In" />
             <form className="w-full px-6" onSubmit={handleFormSubmit}>
                <TextField
                   onChange={onChangeHandler}
@@ -113,23 +115,10 @@ const LoginForm = () => {
                      </Link>
                   </div>
                </div>
-               <input
-                  className="middle cursor-pointer none center rounded-lg bg-secondary py-3 px-6 text-md font-semibold w-full text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                  type="submit"
-                  value="Sign In"
-               />
+               <FormSubmit btnText="Sign In" />
                <GoogleSignIn />
             </form>
-            <div className="text-center bg-[#f5f5f6] py-4 mt-6 w-full">
-               <h2>
-                  {`Don't have an account? Please register`}{" "}
-                  <Link
-                     className="text-primary font-semibold underline"
-                     to="/register">
-                     Here
-                  </Link>
-               </h2>
-            </div>
+            <AuthFormFooter loginPage={true} />
          </div>
       </div>
    );

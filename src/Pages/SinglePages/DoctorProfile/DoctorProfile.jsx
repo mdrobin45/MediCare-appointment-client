@@ -1,5 +1,5 @@
 import PageHeader from "../../../Components/PageHeader/PageHeader.jsx";
-import Profile from "../../../Components/SinglePage/DoctorProfile/Profile.jsx";
+import Profile from "../../../Containers/SinglePage/DoctorProfile/Profile.jsx";
 
 const DoctorProfile = () => {
    return (

@@ -5,13 +5,11 @@ import { useLocation } from "react-router-dom";
 import { postAppointment } from "../../Api/Api";
 import useAuth from "../../Hooks/useAuth";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
-import PaymentSuccess from "./PaymentSuccess";
 import Summary from "./Summary/Summary";
 
 const BookingLayout = () => {
    const { user } = useAuth();
    const { state } = useLocation();
-   const [modalOpen, setModalOpen] = useState(false);
    const { meetDate, meetTime, doctorId, selectedService } = state;
 
    // Calculate services price
@@ -75,7 +73,6 @@ const BookingLayout = () => {
 
    return (
       <div className="px-2 mt-10 sm:px-6 lg:px-8 flex justify-between gap-10">
-         <PaymentSuccess open={modalOpen} setClose={setModalOpen} />
          <AppointmentForm
             formData={formData}
             setFormData={setFormData}

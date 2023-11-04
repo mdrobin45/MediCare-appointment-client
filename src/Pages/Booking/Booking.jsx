@@ -1,5 +1,5 @@
-import BookingLayout from "../../Components/Booking/BookingLayout";
 import PageHeader from "../../Components/PageHeader/PageHeader";
+import BookingLayout from "../../Containers/BookingContainer/BookingLayout";
 
 const Booking = () => {
    return (

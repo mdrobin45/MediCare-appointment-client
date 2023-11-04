@@ -2,11 +2,14 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import AuthFormFooter from "../../Components/AuthFormFooter/AuthFormFooter";
+import AuthFormHeader from "../../Components/AuthFormHeader/AuthFormHeader";
+import FormSubmit from "../../Components/InputFields/FormSubmit";
+import GoogleSignIn from "../../Components/InputFields/GoogleSignIn";
+import PasswordField from "../../Components/InputFields/PasswordField";
+import TextField from "../../Components/InputFields/TextField";
 import { AuthContext } from "../../MyContext/AuthContextProvider";
-import GoogleSignIn from "../FormFields/GoogleSignIn";
-import PasswordField from "../FormFields/PasswordField";
-import TextField from "../FormFields/TextField";
-import { formValidation } from "./validation";
+import { formValidation } from "../../Utils/regFormValidation";
 
 const RegisterForm = () => {
    const [errorMessage, setErrorMessage] = useState(null);
@@ -91,8 +94,7 @@ const RegisterForm = () => {
 
    return (
       <div className="mx-auto w-[26rem] border rounded-md shadow-md">
-         <h2 className="text-2xl px-6 pt-3 pb-3 font-bold">Sign Up</h2>
-         <hr />
+         <AuthFormHeader heading="Sign Up" />
          <form className="w-full px-6" onSubmit={handleFormSubmit}>
             <TextField
                onChange={onChangeHandler}
@@ -145,23 +147,10 @@ const RegisterForm = () => {
                </span>
             </div>
             <p className="text-red-500 pb-3">{errorMessage}</p>
-            <input
-               className="middle cursor-pointer none center rounded-lg bg-secondary py-3 px-6 text-md font-semibold w-full text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-               type="submit"
-               value="Sign Up"
-            />
+            <FormSubmit btnText="Sign Up" />
             <GoogleSignIn />
          </form>
-         <div className="text-center bg-[#f5f5f6] py-4 mt-6 w-full">
-            <h2>
-               Already have an account? Please login{" "}
-               <Link
-                  className="text-primary font-semibold underline"
-                  to="/login">
-                  Here
-               </Link>
-            </h2>
-         </div>
+         <AuthFormFooter registerPage={true} />
       </div>
    );
 };

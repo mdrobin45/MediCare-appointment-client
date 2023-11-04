@@ -1,4 +1,4 @@
-const Field = ({ label, value, changeHandler, name }) => {
+const TextField = ({ label, value, changeHandler, name }) => {
    return (
       <div className="w-full">
          <div className="relative h-10 w-full min-w-[200px]">
@@ -17,4 +17,4 @@ const Field = ({ label, value, changeHandler, name }) => {
    );
 };
 
-export default Field;
+export default TextField;

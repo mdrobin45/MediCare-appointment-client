@@ -1,5 +1,5 @@
 import { Radio, RadioGroup } from "rsuite";
-import Field from "./FormFields/field";
+import TextField from "../../../Components/BookingFormFields/TextField";
 
 const AppointmentForm = ({ changeHandler, formData, setFormData }) => {
    return (
@@ -10,37 +10,37 @@ const AppointmentForm = ({ changeHandler, formData, setFormData }) => {
          <form className="mt-10 p-6">
             <h2 className="text-xl font-bold pb-3">Your Information</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 gap-y-6">
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.name}
                   label="Enter your name"
                   name="name"
                />
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.email}
                   label="Your email"
                   name="email"
                />
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.phone}
                   label="Your phone"
                   name="phone"
                />
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.age}
                   label="Your age"
                   name="age"
                />
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.address}
                   label="Address"
                   name="address"
                />
-               <Field
+               <TextField
                   changeHandler={changeHandler}
                   value={formData.city}
                   label="City"
