@@ -1,60 +1,34 @@
-import {
-   Tab,
-   TabPanel,
-   Tabs,
-   TabsBody,
-   TabsHeader,
-} from "@material-tailwind/react";
+import { useState } from "react";
+import { Nav } from "rsuite";
 import Availability from "./Availability/Availability";
 import Locations from "./Locations/Locations";
 import Overview from "./Overview/Overview";
 import Reviews from "./Reviews/Reviews";
 
-const tabList = [
-   {
-      label: "Overview",
-      value: "overview",
-   },
-   {
-      label: "Locations",
-      value: "locations",
-   },
-
-   {
-      label: "Reviews",
-      value: "reviews",
-   },
-   {
-      label: "Availability",
-      value: "availability",
-   },
-];
+const Navbar = ({ active, onSelect, ...props }) => {
+   return (
+      <Nav
+         justified
+         {...props}
+         activeKey={active}
+         onSelect={onSelect}
+         style={{ marginBottom: 50 }}>
+         <Nav.Item eventKey="overview">Overview</Nav.Item>
+         <Nav.Item eventKey="locations">Locations</Nav.Item>
+         <Nav.Item eventKey="reviews">Reviews</Nav.Item>
+         <Nav.Item eventKey="availability">Availability</Nav.Item>
+      </Nav>
+   );
+};
 const AboutTabs = ({ doctor }) => {
+   const [active, setActive] = useState("overview");
    return (
       <div className="border p-6 my-16 min-h-[30rem] rounded-md">
-         <Tabs value="overview">
-            <TabsHeader>
-               {tabList.map(({ label, value }) => (
-                  <Tab key={value} value={value}>
-                     {label}
-                  </Tab>
-               ))}
-            </TabsHeader>
-            <TabsBody>
-               <TabPanel value="overview">
-                  <Overview doctor={doctor} />
-               </TabPanel>
-               <TabPanel value="locations">
-                  <Locations doctor={doctor} />
-               </TabPanel>
-               <TabPanel value="reviews">
-                  <Reviews doctor={doctor} />
-               </TabPanel>
-               <TabPanel value="availability">
-                  <Availability doctor={doctor} />
-               </TabPanel>
-            </TabsBody>
-         </Tabs>
+         <Navbar appearance="tabs" active={active} onSelect={setActive} />
+         {active === "overview" && <Overview doctor={doctor} />}
+         {active === "locations" && <Locations doctor={doctor} />}
+         {active === "reviews" && <Reviews doctor={doctor} />}
+         {active === "availability" && <Availability doctor={doctor} />}
       </div>
    );
 };
