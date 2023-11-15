@@ -1,11 +1,11 @@
 import PageHeader from "../../Components/PageHeader/PageHeader";
-import BookingLayout from "../../Containers/BookingContainer/BookingLayout";
+import Book from "../../Containers/Booking/Book";
 
 const Booking = () => {
    return (
       <div>
          <PageHeader title="Book Appointment" />
-         <BookingLayout />
+         <Book />
       </div>
    );
 };

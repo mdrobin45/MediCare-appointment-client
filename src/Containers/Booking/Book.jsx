@@ -2,7 +2,7 @@ import useBookingForm from "../../Hooks/useBookingForm";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
 import Summary from "./Summary/Summary";
 
-const BookingLayout = () => {
+const Book = () => {
    const {
       appointmentData,
       setAppointmentData,
@@ -28,4 +28,4 @@ const BookingLayout = () => {
    );
 };
 
-export default BookingLayout;
+export default Book;
