@@ -1,13 +1,23 @@
-import { AiTwotoneStar } from "react-icons/ai";
 import { BsStopwatch } from "react-icons/bs";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { Rate } from "rsuite";
+import "./style.css";
 
 const DoctorCard = ({ doctor }) => {
-   const { _id, name, photoURL, tagline, feedback, verified, location, price } =
-      doctor;
+   const {
+      _id,
+      name,
+      photoURL,
+      tagline,
+      feedback,
+      ratings,
+      verified,
+      location,
+      price,
+   } = doctor;
    return (
       <div className="p-3 rounded-md border">
          <img className="rounded-md" src={photoURL} alt="Doctor" />
@@ -19,11 +29,13 @@ const DoctorCard = ({ doctor }) => {
          <p>{tagline}</p>
          <div className="flex items-center gap-2 pb-3">
             <div className="flex items-center gap-1">
-               <AiTwotoneStar className="text-yellow-500 text-xl" />
-               <AiTwotoneStar className="text-yellow-500 text-xl" />
-               <AiTwotoneStar className="text-yellow-500 text-xl" />
-               <AiTwotoneStar className="text-yellow-500 text-xl" />
-               <AiTwotoneStar className="text-yellow-500 text-xl" />
+               <Rate
+                  className="docRatingCard"
+                  size="xs"
+                  readOnly
+                  defaultValue={ratings}
+                  allowHalf
+               />
             </div>
             <span>({feedback})</span>
          </div>
