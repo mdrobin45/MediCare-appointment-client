@@ -1,15 +1,15 @@
 import { FaRegCircleDot } from "react-icons/fa6";
 
-const Experience = ({ doctor }) => {
-   const { experience } = doctor;
+const Education = ({ doctor }) => {
+   const { education } = doctor;
    return (
-      <div className="lg:max-w-screen-xl md:max-w-full mx-auto pt-6 sm:max-w-xl">
-         <h2 className="text-xl font-bold text-black pb-6">Work Experience</h2>
+      <div className="lg:max-w-screen-xl md:max-w-full mx-auto pt-10 sm:max-w-xl">
+         <h2 className="text-xl font-bold text-black pb-6">Education</h2>
          <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
             <div>
-               {experience.map((item, id) => (
+               {education.map((item, id) => (
                   <div key={id} className="flex">
-                     <div className="flex flex-col items-center mr-4">
+                     <div className="flex flex-col items-center mt-3 mr-4">
                         <div>
                            <div className="flex items-center justify-center rounded-full">
                               <FaRegCircleDot className="text-secondary" />
@@ -17,17 +17,18 @@ const Experience = ({ doctor }) => {
                         </div>
                         <div
                            className={`w-px bg-gray-300 ${
-                              experience.indexOf(item) === experience.length - 1
-                                 ? "h-[2rem]"
+                              education.indexOf(item) === education.length - 1
+                                 ? "h-[4rem]"
                                  : "h-full"
                            }`}
                         />
                      </div>
                      <div className="-mt-1 pb-8">
                         <h2 className="mb-1 text-black text-md font-semibold">
-                           {item.title}
+                           {item.institution}
                         </h2>
-                        <p>{item.year}</p>
+                        <p>{item.degree}</p>
+                        <p>Passing Year: {item.graduationYear}</p>
                      </div>
                   </div>
                ))}
@@ -37,4 +38,4 @@ const Experience = ({ doctor }) => {
    );
 };
 
-export default Experience;
+export default Education;

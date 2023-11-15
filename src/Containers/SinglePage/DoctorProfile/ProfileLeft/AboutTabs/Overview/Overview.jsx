@@ -1,9 +1,10 @@
-import Awards from "./Awards";
-import Bio from "./Bio";
-import Education from "./Education";
-import Experience from "./Experience";
-import Services from "./Services";
-import Specializations from "./Specializations";
+import Awards from "./Awards/Awards";
+import Bio from "./Bio/Bio";
+
+import Education from "./Education/Education";
+import Experience from "./Experience/Experience";
+import Services from "./Services/Services";
+import Specializations from "./Specializations/Specializations";
 
 const Overview = ({ doctor }) => {
    return (
