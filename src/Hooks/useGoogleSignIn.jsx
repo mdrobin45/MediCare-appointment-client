@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../MyContext/AuthContextProvider";
-import { showErrorToast, showSuccessToast } from "../Utils/toast";
+import { showToast } from "../Utils/toast";
 
 const useGoogleSignIn = () => {
    const { loginWithGoogle } = useContext(AuthContext);
@@ -13,13 +13,13 @@ const useGoogleSignIn = () => {
       loginWithGoogle()
          .then((result) => {
             if (result.user) {
-               showSuccessToast("Login Successful!", "success");
+               showToast("Login Successful!", "success");
                navigate(state ? state.prevUrl : "/");
             }
          })
          .catch((err) => {
             if (err) {
-               showErrorToast("Something went wrong!", "error");
+               showToast("Something went wrong!", "error");
             }
          });
    };

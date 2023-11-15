@@ -1,5 +1,5 @@
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
-import ServicesSlider from "./ServicesSlider/ServicesSlider";
+import ServicesSlider from "./ServicesSlider";
 
 const Services = () => {
    return (

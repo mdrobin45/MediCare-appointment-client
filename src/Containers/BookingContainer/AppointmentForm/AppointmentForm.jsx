@@ -1,7 +1,43 @@
 import { Radio, RadioGroup } from "rsuite";
 import TextField from "../../../Components/BookingFormFields/TextField";
 
-const AppointmentForm = ({ changeHandler, formData, setFormData }) => {
+const AppointmentForm = ({
+   changeHandler,
+   appointmentData,
+   setAppointmentData,
+}) => {
+   const formFields = [
+      {
+         label: "Enter your name",
+         name: "name",
+         value: appointmentData.name,
+      },
+      {
+         label: "Your email",
+         name: "email",
+         value: appointmentData.email,
+      },
+      {
+         label: "Your phone",
+         name: "phone",
+         value: appointmentData.phone,
+      },
+      {
+         label: "Your age",
+         name: "age",
+         value: appointmentData.age,
+      },
+      {
+         label: "Address",
+         name: "address",
+         value: appointmentData.address,
+      },
+      {
+         label: "City",
+         name: "city",
+         value: appointmentData.city,
+      },
+   ];
    return (
       <div className="w-2/3 border rounded-md">
          <div className="bg-primary text-white p-6 rounded-t-md">
@@ -10,50 +46,23 @@ const AppointmentForm = ({ changeHandler, formData, setFormData }) => {
          <form className="mt-10 p-6">
             <h2 className="text-xl font-bold pb-3">Your Information</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 gap-y-6">
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.name}
-                  label="Enter your name"
-                  name="name"
-               />
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.email}
-                  label="Your email"
-                  name="email"
-               />
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.phone}
-                  label="Your phone"
-                  name="phone"
-               />
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.age}
-                  label="Your age"
-                  name="age"
-               />
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.address}
-                  label="Address"
-                  name="address"
-               />
-               <TextField
-                  changeHandler={changeHandler}
-                  value={formData.city}
-                  label="City"
-                  name="city"
-               />
+               {formFields.map((field, index) => (
+                  <TextField
+                     key={index}
+                     changeHandler={changeHandler}
+                     value={field.value}
+                     label={field.label}
+                     name={field.name}
+                  />
+               ))}
             </div>
             <RadioGroup
                className="mt-4"
                inline
                name="gender"
-               value={formData.gender}
+               value={appointmentData.gender}
                onChange={(e) =>
-                  setFormData((prev) => ({
+                  setAppointmentData((prev) => ({
                      ...prev,
                      gender: e,
                   }))

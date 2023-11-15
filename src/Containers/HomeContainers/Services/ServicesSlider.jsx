@@ -2,7 +2,7 @@
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../../../Components/ServicesCard/ServiceCard";
 const ServicesSlider = () => {
    return (
       <div className="z-10">
