@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getUserAppointments } from "../../Api/Api";
+import { getUserAppointments } from "../../Api/ApiRequest";
 import useAuth from "../../Hooks/useAuth";
 
 const Dashboard = () => {

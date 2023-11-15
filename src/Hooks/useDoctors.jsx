@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllDoctors } from "../Api/Api";
+import { getAllDoctors } from "../Api/ApiRequest";
 
 const useDoctors = () => {
    const { isPending, data } = useQuery({

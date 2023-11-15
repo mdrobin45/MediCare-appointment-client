@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { postAppointment } from "../Api/Api";
+import { postAppointment } from "../Api/ApiRequest";
 import useAuth from "./useAuth";
 
 // Initial form values

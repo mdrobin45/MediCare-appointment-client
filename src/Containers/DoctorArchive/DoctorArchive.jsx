@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { loadCurrentPageDoctor } from "../../Api/Api";
+import { loadCurrentPageDoctor } from "../../Api/ApiRequest";
 import DoctorCard from "../../Components/DoctorCard/DoctorCard";
 import Pagination from "../../Components/Pagination/Pagination";
 
