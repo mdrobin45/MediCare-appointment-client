@@ -19,7 +19,7 @@ const DoctorCard = ({ doctor }) => {
       price,
    } = doctor;
    return (
-      <div className="p-3 rounded-md border">
+      <div className="border flex flex-col justify-between p-3 rounded-md">
          <img className="rounded-md" src={photoURL} alt="Doctor" />
          <div className="flex items-center gap-2">
             <h2 className="text-xl pt-3 pb-2 font-bold">{name}</h2>
@@ -51,16 +51,11 @@ const DoctorCard = ({ doctor }) => {
             <FaRegMoneyBillAlt className="text-gray-400 text-md" />
             <p>${price}</p>
          </div>
-         <div className="flex items-center justify-between gap-2">
+         <div className="flex mt-4 items-center justify-center">
             <Link
                to={`/doctors/${_id}`}
-               className="w-2/4 text-center text-md border-2 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-white rounded-md py-1 px-2">
+               className="w-2/4 text-center text-md border-2 border-secondary text-secondary mt-auto bg-transparent hover:bg-secondary hover:text-white rounded-md py-1 px-2">
                View Profile
-            </Link>
-            <Link
-               to={`/booking/${_id}`}
-               className="w-2/4 text-center text-md border-2 border-secondary hover:text-secondary hover:bg-transparent bg-secondary text-white rounded-md py-1 px-2">
-               Appointment
             </Link>
          </div>
       </div>

@@ -1,0 +1,473 @@
+[
+   {
+      "name": "Dr. Sarah Johnson",
+      "photoURL": "https://i.ibb.co/WpYKHzt/1.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Monday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         },
+         {
+            "day": "Wednesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Committed to comprehensive care",
+      "ratings": 4.9,
+      "feedback": 150,
+      "location": "789 Pine Street, Villagetown",
+      "clinicServices": ["Cardiology", "Preventive Medicine", "EKG Testing"],
+      "price": 150,
+      "bio": "Dr. Sarah Johnson is a highly skilled cardiologist with a passion for preventive medicine and a commitment to providing comprehensive care...",
+      "education": [
+         {
+            "institution": "Cardiology Institute",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2005-2011"
+         },
+         {
+            "institution": "Health Sciences College",
+            "degree": "Bachelor of Science in Physiology",
+            "graduationYear": "2001-2005"
+         }
+      ],
+      "experience": [
+         { "title": "Cardiologist", "year": "2011-present" },
+         { "title": "Internship", "year": "2010-2011" }
+      ],
+      "awards": [
+         {
+            "name": "Cardiology Excellence Award",
+            "monthYear": "October 2018",
+            "description": "Recognized for outstanding contributions to cardiology."
+         },
+         {
+            "name": "Community Service Award",
+            "monthYear": "June 2022",
+            "description": "Acknowledged for dedicated community service."
+         }
+      ],
+      "services": [
+         { "name": "Cardiology Consultation", "price": 120 },
+         { "name": "EKG Testing", "price": 30 }
+      ],
+      "specializations": ["Cardiology", "Preventive Medicine"]
+   },
+   {
+      "name": "Dr. Michael Thompson",
+      "photoURL": "https://i.ibb.co/bmsthjD/2.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Tuesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         },
+         {
+            "day": "Thursday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Your partner in mental well-being",
+      "ratings": 4.7,
+      "feedback": 130,
+      "location": "567 Elm Avenue, Metrocity",
+      "clinicServices": ["Psychiatry", "Counseling", "Stress Management"],
+      "price": 120,
+      "bio": "Dr. Michael Thompson is a dedicated psychiatrist with a focus on providing compassionate care for mental well-being...",
+      "education": [
+         {
+            "institution": "Psychiatry Institute",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2008-2014"
+         },
+         {
+            "institution": "University of Psychology",
+            "degree": "Bachelor of Arts in Psychology",
+            "graduationYear": "2004-2008"
+         }
+      ],
+      "experience": [
+         { "title": "Psychiatrist", "year": "2014-present" },
+         { "title": "Residency", "year": "2012-2014" }
+      ],
+      "awards": [
+         {
+            "name": "Psychiatry Excellence Award",
+            "monthYear": "September 2019",
+            "description": "Acknowledged for outstanding contributions to psychiatry."
+         }
+      ],
+      "services": [
+         { "name": "Psychiatric Consultation", "price": 100 },
+         { "name": "Counseling Session", "price": 40 }
+      ],
+      "specializations": ["Psychiatry", "Stress Management"]
+   },
+   {
+      "name": "Dr. Emily Davis",
+      "photoURL": "https://i.ibb.co/4ZSz5f8/3.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Monday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         },
+         {
+            "day": "Wednesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Comprehensive Women's Health Care",
+      "ratings": 4.5,
+      "feedback": 110,
+      "location": "345 Oak Street, Hilltop",
+      "clinicServices": ["Gynecology", "Obstetrics", "Family Planning"],
+      "price": 130,
+      "bio": "Dr. Emily Davis is a dedicated women's health specialist, providing comprehensive care in gynecology, obstetrics, and family planning...",
+      "education": [
+         {
+            "institution": "Women's Health Institute",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2007-2013"
+         },
+         {
+            "institution": "Health Sciences College",
+            "degree": "Bachelor of Science in Biology",
+            "graduationYear": "2003-2007"
+         }
+      ],
+      "experience": [
+         { "title": "Women's Health Specialist", "year": "2013-present" },
+         { "title": "Internship", "year": "2012-2013" }
+      ],
+      "awards": [
+         {
+            "name": "Women's Health Excellence Award",
+            "monthYear": "April 2017",
+            "description": "Acknowledged for outstanding contributions to women's health."
+         },
+         {
+            "name": "Community Service Award",
+            "monthYear": "July 2021",
+            "description": "Recognized for dedicated community service."
+         }
+      ],
+      "services": [
+         { "name": "Gynecology Consultation", "price": 100 },
+         { "name": "Family Planning Session", "price": 30 }
+      ],
+      "specializations": ["Gynecology", "Obstetrics", "Family Planning"]
+   },
+   {
+      "name": "Dr. Robert Miller",
+      "photoURL": "https://i.ibb.co/G9qgCtp/4.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Tuesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         },
+         {
+            "day": "Thursday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Expert Orthopedic Care",
+      "ratings": 4.8,
+      "feedback": 140,
+      "location": "678 Maple Avenue, Suburbia",
+      "clinicServices": [
+         "Orthopedic Consultation",
+         "Joint Replacement",
+         "Sports Medicine"
+      ],
+      "price": 140,
+      "bio": "Dr. Robert Miller is a highly skilled orthopedic specialist, providing expert care in orthopedic consultations, joint replacements, and sports medicine...",
+      "education": [
+         {
+            "institution": "Orthopedic Institute",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2006-2012"
+         },
+         {
+            "institution": "Health Sciences College",
+            "degree": "Bachelor of Science in Anatomy",
+            "graduationYear": "2002-2006"
+         }
+      ],
+      "experience": [
+         { "title": "Orthopedic Surgeon", "year": "2012-present" },
+         { "title": "Residency", "year": "2010-2012" }
+      ],
+      "awards": [
+         {
+            "name": "Orthopedic Excellence Award",
+            "monthYear": "November 2016",
+            "description": "Acknowledged for outstanding contributions to orthopedic care."
+         }
+      ],
+      "services": [
+         { "name": "Orthopedic Consultation", "price": 120 },
+         { "name": "Joint Replacement", "price": 50 }
+      ],
+      "specializations": ["Orthopedics", "Sports Medicine"]
+   },
+   {
+      "name": "Dr. Jennifer Brown",
+      "photoURL": "https://i.ibb.co/d6w3Yv5/5.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Monday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         },
+         {
+            "day": "Wednesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Dental Care Excellence",
+      "ratings": 4.6,
+      "feedback": 125,
+      "location": "890 Cherry Street, Downtown",
+      "clinicServices": ["Dental Checkup", "Teeth Whitening", "Oral Surgery"],
+      "price": 110,
+      "bio": "Dr. Jennifer Brown is a skilled dentist, providing excellence in dental care with a focus on dental checkups, teeth whitening, and oral surgery...",
+      "education": [
+         {
+            "institution": "Dental School",
+            "degree": "Doctor of Dental Medicine",
+            "graduationYear": "2008-2014"
+         },
+         {
+            "institution": "University of Science",
+            "degree": "Bachelor of Science in Biochemistry",
+            "graduationYear": "2004-2008"
+         }
+      ],
+      "experience": [
+         { "title": "Dentist", "year": "2014-present" },
+         { "title": "Internship", "year": "2013-2014" }
+      ],
+      "awards": [
+         {
+            "name": "Dental Excellence Award",
+            "monthYear": "March 2019",
+            "description": "Recognized for outstanding contributions to dental care."
+         }
+      ],
+      "services": [
+         { "name": "Dental Checkup", "price": 80 },
+         { "name": "Oral Surgery", "price": 60 }
+      ],
+      "specializations": ["Dentistry"]
+   },
+   {
+      "name": "Dr. William Turner",
+      "photoURL": "https://i.ibb.co/WpYKHzt/1.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Tuesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         },
+         {
+            "day": "Thursday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Expert Neurology Care",
+      "ratings": 4.7,
+      "feedback": 135,
+      "location": "123 Pine Lane, Suburbia",
+      "clinicServices": [
+         "Neurology Consultation",
+         "Brain Imaging",
+         "Headache Management"
+      ],
+      "price": 130,
+      "bio": "Dr. William Turner is a highly experienced neurologist, providing expert care in neurology consultations, brain imaging, and headache management...",
+      "education": [
+         {
+            "institution": "Neurology Institute",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2007-2013"
+         },
+         {
+            "institution": "Health Sciences College",
+            "degree": "Bachelor of Science in Neuroscience",
+            "graduationYear": "2003-2007"
+         }
+      ],
+      "experience": [
+         { "title": "Neurologist", "year": "2013-present" },
+         { "title": "Residency", "year": "2011-2013" }
+      ],
+      "awards": [
+         {
+            "name": "Neurology Excellence Award",
+            "monthYear": "August 2017",
+            "description": "Recognized for outstanding contributions to neurology care."
+         }
+      ],
+      "services": [
+         { "name": "Neurology Consultation", "price": 120 },
+         { "name": "Brain Imaging", "price": 50 }
+      ],
+      "specializations": ["Neurology", "Headache Management"]
+   },
+   {
+      "name": "Dr. John Doe",
+      "photoURL": "https://i.ibb.co/bmsthjD/2.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Monday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         },
+         {
+            "day": "Wednesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Your health is our priority",
+      "ratings": 4.8,
+      "feedback": 120,
+      "location": "123 Main Street, Cityville",
+      "clinicServices": ["General Checkup", "Vaccinations", "Minor Surgeries"],
+      "price": 100,
+      "bio": "Dr. John Doe is a dedicated and compassionate medical professional with over 15 years of experience...",
+      "education": [
+         {
+            "institution": "Medical University",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2006-2012"
+         },
+         {
+            "institution": "Health Sciences College",
+            "degree": "Bachelor of Science in Biology",
+            "graduationYear": "2002-2006"
+         }
+      ],
+      "experience": [
+         { "title": "Senior Physician", "year": "2010-2021" },
+         { "title": "Resident Doctor", "year": "2006-2010" }
+      ],
+      "awards": [
+         {
+            "name": "Excellence in Patient Care Award",
+            "monthYear": "July 2020",
+            "description": "Awarded for outstanding dedication to patient well-being."
+         },
+         {
+            "name": "Outstanding Service Award",
+            "monthYear": "March 2018",
+            "description": "Recognized for exceptional service in the medical field."
+         }
+      ],
+      "services": [
+         { "name": "Consultation", "price": 80 },
+         { "name": "Vaccination", "price": 20 }
+      ],
+      "specializations": ["Internal Medicine", "Family Medicine"]
+   },
+   {
+      "name": "Dr. Jane Smith",
+      "photoURL": "https://i.ibb.co/4ZSz5f8/3.png",
+      "speciality": "653cd327eaea7b45963368c1",
+      "availability": [
+         {
+            "day": "Tuesday",
+            "slots": [
+               { "startTime": "10:00 AM", "endTime": "01:00 PM" },
+               { "startTime": "03:00 PM", "endTime": "06:00 PM" }
+            ]
+         },
+         {
+            "day": "Thursday",
+            "slots": [
+               { "startTime": "09:00 AM", "endTime": "12:00 PM" },
+               { "startTime": "02:00 PM", "endTime": "05:00 PM" }
+            ]
+         }
+      ],
+      "tagline": "Committed to your well-being",
+      "ratings": 4.5,
+      "feedback": 95,
+      "location": "456 Oak Avenue, Townsville",
+      "clinicServices": ["Pediatric Care", "Women's Health", "Allergy Testing"],
+      "price": 120,
+      "bio": "Dr. Jane Smith is a passionate and caring physician specializing in pediatric and women's health...",
+      "education": [
+         {
+            "institution": "Medical College",
+            "degree": "Doctor of Medicine",
+            "graduationYear": "2007-2013"
+         },
+         {
+            "institution": "Health Sciences University",
+            "degree": "Bachelor of Science in Chemistry",
+            "graduationYear": "2003-2007"
+         }
+      ],
+      "experience": [
+         { "title": "Pediatrician", "year": "2013-present" },
+         { "title": "Internship", "year": "2012-2013" }
+      ],
+      "awards": [
+         {
+            "name": "Pediatric Excellence Award",
+            "monthYear": "May 2016",
+            "description": "Recognized for outstanding contributions to pediatric care."
+         }
+      ],
+      "services": [
+         { "name": "Pediatric Consultation", "price": 100 },
+         { "name": "Allergy Testing", "price": 30 }
+      ],
+      "specializations": ["Pediatrics", "Women's Health"]
+   }
+]
