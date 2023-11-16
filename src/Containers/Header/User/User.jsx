@@ -44,7 +44,7 @@ const User = () => {
                      </button>
                      <Link
                         to="/booking"
-                        className="text-white bg-primary transition-all border border-primary focus:outline-none font-medium rounded-lg text-md px-3 py-2 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
+                        className="text-white hover:text-white bg-primary transition-all border border-primary focus:outline-none font-medium rounded-lg text-md px-3 py-2 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
                         Appointment
                         <BiPlusMedical className="text-md ml-2" />
                      </Link>

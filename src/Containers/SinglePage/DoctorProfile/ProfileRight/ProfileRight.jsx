@@ -1,10 +1,9 @@
 import { isBefore } from "date-fns";
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
-import "react-day-picker/dist/style.css";
+// import "react-day-picker/dist/style.css";
 import { useNavigate } from "react-router-dom";
 import { DatePicker } from "rsuite";
-import "rsuite/dist/rsuite.min.css";
 import "./style.css";
 
 const ProfileRight = ({ doctor }) => {

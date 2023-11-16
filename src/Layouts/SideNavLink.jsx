@@ -1,9 +1,9 @@
-import { FaBriefcaseMedical, FaWallet } from "react-icons/fa";
+import { FaBriefcaseMedical, FaWallet, FaWheelchair } from "react-icons/fa";
 import { FaTableColumns } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
 import "./style.css";
 
 import { Nav, Sidenav } from "rsuite";
+import DashboardNavLink from "../Components/DashboardNavLink/DashboardNavLink";
 import useAuth from "../Hooks/useAuth";
 
 const styles = {
@@ -11,14 +11,48 @@ const styles = {
    display: "inline-table",
    marginRight: 10,
 };
-const SideNavLink = ({
-   appearance,
-   openKeys,
-   expanded,
-   onOpenChange,
-   ...navProps
-}) => {
+
+// Patient nav links
+const patientNav = [
+   {
+      name: "Dashboard",
+      link: "/patient/dashboard",
+      icon: <FaTableColumns />,
+   },
+   {
+      name: "Appointments",
+      link: "/patient/appointments",
+      icon: <FaBriefcaseMedical />,
+   },
+   {
+      name: "Payment History",
+      link: "/patient/payment-history",
+      icon: <FaWallet />,
+   },
+];
+
+// Doctor nav links
+const adminNav = [
+   {
+      name: "Dashboard",
+      link: "/doctor/dashboard",
+      icon: <FaTableColumns />,
+   },
+   {
+      name: "Appointments",
+      link: "/doctor/appointments",
+      icon: <FaBriefcaseMedical />,
+   },
+   {
+      name: "My Patients",
+      link: "/doctor/my-patients",
+      icon: <FaWheelchair />,
+   },
+];
+const SideNavLink = (props) => {
+   const { appearance, openKeys, expanded, onOpenChange, ...navProps } = props;
    const { user } = useAuth();
+   const admin = true;
    return (
       <div style={styles}>
          <Sidenav
@@ -34,35 +68,42 @@ const SideNavLink = ({
                      alt="Profile"
                   />
                </div>
-               <Nav {...navProps}>
-                  <Nav.Item
-                     as={NavLink}
-                     to="/patient/dashboard"
-                     classPrefix="dashboardLink"
-                     className="flex items-center gap-3 px-3 text-[16px] py-3 focus:bg-[#1675e0] hover:bg-[#1675e0] overflow-hidden relative"
-                     eventKey="1">
-                     <FaTableColumns />
-                     Dashboard
-                  </Nav.Item>
-                  <Nav.Item
-                     as={NavLink}
-                     to="/patient/appointments"
-                     classPrefix="dashboardLink"
-                     className="flex items-center gap-3 px-3 text-[16px] py-3 focus:bg-[#1675e0] hover:bg-[#1675e0] overflow-hidden relative"
-                     eventKey="2">
-                     <FaBriefcaseMedical />
-                     Appointments
-                  </Nav.Item>
-                  <Nav.Item
-                     as={NavLink}
-                     to="/patient/payment-history"
-                     classPrefix="dashboardLink"
-                     className="flex items-center gap-3 px-3 text-[16px] py-3 focus:bg-[#1675e0] hover:bg-[#1675e0] overflow-hidden relative"
-                     eventKey="3">
-                     <FaWallet />
-                     Payment History
-                  </Nav.Item>
-               </Nav>
+               {admin ? (
+                  <Nav {...navProps}>
+                     {adminNav.map((nav, index) => (
+                        <DashboardNavLink
+                           key={nav.index}
+                           url={nav.link}
+                           text={nav.name}
+                           icon={nav.icon}
+                           eventKey={index}
+                        />
+                     ))}
+                  </Nav>
+               ) : (
+                  <Nav {...navProps}>
+                     {patientNav.map((nav, index) => (
+                        <DashboardNavLink
+                           key={nav.index}
+                           url={nav.link}
+                           text={nav.name}
+                           icon={nav.icon}
+                           eventKey={index}
+                        />
+                     ))}
+                  </Nav>
+               )}
+               {/* <Nav {...navProps}>
+                  {patientNav.map((nav, index) => (
+                     <DashboardNavLink
+                        key={nav.index}
+                        url={nav.link}
+                        text={nav.name}
+                        icon={nav.icon}
+                        eventKey={index}
+                     />
+                  ))}
+               </Nav> */}
             </Sidenav.Body>
          </Sidenav>
       </div>
