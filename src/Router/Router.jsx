@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../Layouts/Dashboard";
 import MainLayout from "../Layouts/MainLayout";
 import About from "../Pages/About/About";
 import Booking from "../Pages/Booking/Booking";
+import PatientAppointments from "../Pages/Dashboard/Patient/PatientAppointments";
+import PatientDashboard from "../Pages/Dashboard/Patient/PatientDashboard";
 import Doctors from "../Pages/Doctors/Doctors";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -41,6 +44,20 @@ const router = createBrowserRouter([
          {
             path: "/doctors/:id",
             element: <DoctorProfile />,
+         },
+      ],
+   },
+   {
+      path: "/patient",
+      element: <Dashboard />,
+      children: [
+         {
+            path: "dashboard",
+            element: <PatientDashboard />,
+         },
+         {
+            path: "appointments",
+            element: <PatientAppointments />,
          },
       ],
    },

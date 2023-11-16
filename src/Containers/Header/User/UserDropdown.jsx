@@ -26,7 +26,7 @@ const UserDropdown = ({ showUserDropdown }) => {
          <Link
             to="/patient/dashboard"
             className="block rounded-lg w-full uppercase text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-            My Profile
+            Dashboard
          </Link>
          <div>
             <button
