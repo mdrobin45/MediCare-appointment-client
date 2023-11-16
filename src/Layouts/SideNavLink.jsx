@@ -3,7 +3,7 @@ import { FaTableColumns } from "react-icons/fa6";
 import "./style.css";
 
 import { Nav, Sidenav } from "rsuite";
-import DashboardNavLink from "../Components/DashboardNavLink/DashboardNavLink";
+import DashboardNavLink from "../Components/Dashboard/DashboardNavLink/DashboardNavLink";
 import useAuth from "../Hooks/useAuth";
 
 const styles = {
@@ -52,7 +52,7 @@ const adminNav = [
 const SideNavLink = (props) => {
    const { appearance, openKeys, expanded, onOpenChange, ...navProps } = props;
    const { user } = useAuth();
-   const admin = true;
+   const admin = false;
    return (
       <div style={styles}>
          <Sidenav
@@ -93,17 +93,6 @@ const SideNavLink = (props) => {
                      ))}
                   </Nav>
                )}
-               {/* <Nav {...navProps}>
-                  {patientNav.map((nav, index) => (
-                     <DashboardNavLink
-                        key={nav.index}
-                        url={nav.link}
-                        text={nav.name}
-                        icon={nav.icon}
-                        eventKey={index}
-                     />
-                  ))}
-               </Nav> */}
             </Sidenav.Body>
          </Sidenav>
       </div>
