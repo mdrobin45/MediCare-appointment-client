@@ -9,7 +9,7 @@ const Dashboard = () => {
    return (
       <div className="flex">
          <SideNavLink
-            className="h-screen"
+            className="h-screen sticky top-3"
             appearance="inverse"
             activeKey={activeKey}
             openKeys={openKeys}

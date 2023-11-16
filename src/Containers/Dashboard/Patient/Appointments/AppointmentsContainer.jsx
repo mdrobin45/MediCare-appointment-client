@@ -2,9 +2,8 @@ import usePatientAppointments from "../../../../Hooks/usePatientAppointments";
 import TableData from "./TableData";
 import TableHead from "./TableHead";
 
-const Appointments = () => {
-   const userAppointments = usePatientAppointments();
-   console.log(userAppointments);
+const AppointmentsContainer = () => {
+   let userAppointments = usePatientAppointments();
    return (
       <div className="relative overflow-x-auto border">
          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -21,4 +20,4 @@ const Appointments = () => {
    );
 };
 
-export default Appointments;
+export default AppointmentsContainer;

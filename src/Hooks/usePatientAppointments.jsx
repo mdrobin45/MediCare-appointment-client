@@ -6,10 +6,11 @@ const usePatientAppointments = () => {
    const { user } = useAuth();
 
    // Request server for user appointment
-   const { data: userAppointments = [] } = useQuery({
+   let { data: userAppointments = [] } = useQuery({
       queryKey: ["userAppointment", user],
       queryFn: () => getUserAppointments(user?.email),
    });
+   userAppointments = userAppointments.toReversed();
 
    return userAppointments;
 };

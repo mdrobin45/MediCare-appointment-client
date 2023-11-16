@@ -5,6 +5,7 @@ import About from "../Pages/About/About";
 import Booking from "../Pages/Booking/Booking";
 import PatientAppointments from "../Pages/Dashboard/Patient/PatientAppointments";
 import PatientDashboard from "../Pages/Dashboard/Patient/PatientDashboard";
+import PaymentHistory from "../Pages/Dashboard/Patient/PaymentHistory";
 import Doctors from "../Pages/Doctors/Doctors";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
          {
             path: "appointments",
             element: <PatientAppointments />,
+         },
+         {
+            path: "payment-history",
+            element: <PaymentHistory />,
          },
       ],
    },

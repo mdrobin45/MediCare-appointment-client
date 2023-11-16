@@ -1,9 +1,9 @@
-import Appointments from "../../../Containers/Dashboard/Patient/Appointments/Appointments";
+import AppointmentsContainer from "../../../Containers/Dashboard/Patient/Appointments/AppointmentsContainer";
 
 const PatientAppointments = () => {
    return (
       <div>
-         <Appointments />
+         <AppointmentsContainer />
       </div>
    );
 };
