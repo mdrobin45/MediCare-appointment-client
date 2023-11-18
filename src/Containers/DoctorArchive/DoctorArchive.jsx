@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { loadCurrentPageDoctor } from "../../Api/ApiRequest";
 import DoctorCard from "../../Components/DoctorCard/DoctorCard";
 import Pagination from "../../Components/Pagination/Pagination";
+import usePublicApiRequest from "../../Hooks/API/PublicApi/usePublicApiRequest";
 
 const DoctorArchive = () => {
    const [pageNumber, setPageNumber] = useState(1);
+   const { loadCurrentPageDoctor } = usePublicApiRequest();
    const pageSize = 8;
 
    // Load data with query stack

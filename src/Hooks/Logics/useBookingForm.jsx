@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { postAppointment } from "../../Api/ApiRequest";
+import useSecureApiRequest from "../API/SecureApi/useSecureApiRequest";
 import useAuth from "../SharedHooks/useAuth";
 
 // Initial form values
@@ -25,6 +25,7 @@ const useBookingForm = () => {
    const { user } = useAuth();
    const { state } = useLocation();
    const { meetDate, meetTime, doctorId, selectedService } = state;
+   const { postAppointment } = useSecureApiRequest();
 
    // Calculate services price
    const totalPrice = selectedService.reduce((accumulator, object) => {

@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllDoctors } from "../../Api/ApiRequest";
+import usePublicApiRequest from "../API/PublicApi/usePublicApiRequest";
 
 const useGetDoctors = () => {
+   const { getAllDoctors } = usePublicApiRequest();
+
    const { isPending, data } = useQuery({
       queryKey: ["doctors"],
       queryFn: getAllDoctors,

@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const useAxios = () => {
-   const axiosInstance = axios.create({
-      baseURL: "http://localhost:3000",
-      withCredentials: true,
-   });
-   return axiosInstance;
+// Create axios instance
+const publicAxiosRequest = axios.create({
+   baseURL: "http://localhost:3000",
+});
+
+const useAxiosPublicInterceptor = () => {
+   return publicAxiosRequest;
 };
 
-export default useAxios;
+export default useAxiosPublicInterceptor;

@@ -10,13 +10,14 @@ import {
    updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { clearToken, generateToken } from "../Api/ApiRequest";
 import auth from "../Configuration/firebase.config";
+import usePublicApiRequest from "../Hooks/API/PublicApi/usePublicApiRequest";
 
 export const AuthContext = createContext(null);
 const AuthContextProvider = ({ children }) => {
    const [user, setUser] = useState(null);
    const [isLoading, setIsLoading] = useState(true);
+   const { generateToken, clearToken } = usePublicApiRequest();
 
    // Auth provider
    const googleAuthProvider = new GoogleAuthProvider();

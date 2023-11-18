@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { getSingleDoctor } from "../../../Api/ApiRequest";
+import useSecureApiRequest from "../../../Hooks/API/SecureApi/useSecureApiRequest";
 import ProfileLeft from "./ProfileLeft/ProfileLeft";
 import ProfileRight from "./ProfileRight/ProfileRight";
 
 const Profile = () => {
    const { id } = useParams();
+   const { getSingleDoctor } = useSecureApiRequest();
 
    // Fetch with tan stack query
    const { isPending, data } = useQuery({
