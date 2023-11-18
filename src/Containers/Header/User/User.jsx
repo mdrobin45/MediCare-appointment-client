@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BiLogInCircle, BiPlusMedical } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../Hooks/SharedHooks/useAuth";
 import UserDropdown from "./userDropdown";
 
 const User = () => {

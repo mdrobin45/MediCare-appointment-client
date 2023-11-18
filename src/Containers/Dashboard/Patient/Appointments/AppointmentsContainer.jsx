@@ -1,5 +1,5 @@
 import Table from "../../../../Components/Dashboard/AppointmentTable/Table";
-import usePatientAppointments from "../../../../Hooks/usePatientAppointments";
+import useGetAppointments from "../../../../Hooks/SharedHooks/useGetAppointments";
 
 // Table cols
 const tableCols = [
@@ -11,7 +11,7 @@ const tableCols = [
    "Action",
 ];
 const AppointmentsContainer = () => {
-   const userAppointments = usePatientAppointments();
+   const userAppointments = useGetAppointments();
    return (
       <div className="relative overflow-x-auto border">
          <Table appointments={userAppointments} tableCols={tableCols} />

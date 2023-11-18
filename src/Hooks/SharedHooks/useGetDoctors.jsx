@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllDoctors } from "../Api/ApiRequest";
+import { getAllDoctors } from "../../Api/ApiRequest";
 
-const useDoctors = () => {
+const useGetDoctors = () => {
    const { isPending, data } = useQuery({
       queryKey: ["doctors"],
       queryFn: getAllDoctors,
@@ -16,4 +16,4 @@ const useDoctors = () => {
    return { isPending, doctors, homeDoctors };
 };
 
-export default useDoctors;
+export default useGetDoctors;

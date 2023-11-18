@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { getUserAppointments } from "../Api/ApiRequest";
+import { getUserAppointments } from "../../Api/ApiRequest";
 import useAuth from "./useAuth";
 
-const usePatientAppointments = () => {
+const useGetAppointments = () => {
    const { user } = useAuth();
 
    // Request server for user appointment
@@ -15,4 +15,4 @@ const usePatientAppointments = () => {
    return userAppointments;
 };
 
-export default usePatientAppointments;
+export default useGetAppointments;

@@ -4,7 +4,7 @@ import "./style.css";
 
 import { Nav, Sidenav } from "rsuite";
 import DashboardNavLink from "../Components/Dashboard/DashboardNavLink/DashboardNavLink";
-import useAuth from "../Hooks/useAuth";
+import useAuth from "../Hooks/SharedHooks/useAuth";
 
 const styles = {
    width: 240,
@@ -52,7 +52,7 @@ const adminNav = [
 const SideNavLink = (props) => {
    const { appearance, openKeys, expanded, onOpenChange, ...navProps } = props;
    const { user } = useAuth();
-   const admin = false;
+   const admin = true;
    return (
       <div style={styles}>
          <Sidenav

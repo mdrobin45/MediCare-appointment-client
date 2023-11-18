@@ -1,4 +1,4 @@
-import useBookingForm from "../../Hooks/useBookingForm";
+import useBookingForm from "../../Hooks/Logics/useBookingForm";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
 import Summary from "./Summary/Summary";
 

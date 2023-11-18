@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../MyContext/AuthContextProvider";
-import { showToast } from "../Utils/toast";
+import { AuthContext } from "../../MyContext/AuthContextProvider";
+import { showToast } from "../../Utils/toast";
 
 const useGoogleSignIn = () => {
    const { loginWithGoogle } = useContext(AuthContext);

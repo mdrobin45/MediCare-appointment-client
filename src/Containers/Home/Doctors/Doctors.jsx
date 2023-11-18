@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import DoctorCard from "../../../Components/DoctorCard/DoctorCard";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
-import useDoctors from "../../../Hooks/useDoctors";
+import useGetDoctors from "../../../Hooks/SharedHooks/useGetDoctors";
 
 const Doctors = () => {
-   const { isPending, homeDoctors } = useDoctors();
+   const { isPending, homeDoctors } = useGetDoctors();
 
    return (
       <div className="px-2 sm:px-6 lg:px-8 py-16">

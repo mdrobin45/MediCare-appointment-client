@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { AuthContext } from "../MyContext/AuthContextProvider";
+import { AuthContext } from "../../MyContext/AuthContextProvider";
 
 const useLoginAuth = () => {
    const { loginWithEmailPassword } = useContext(AuthContext);
@@ -28,7 +28,6 @@ const useLoginAuth = () => {
          render: "Processing...",
          isLoading: true,
       });
-      // showToast("Processing...", null, true);
 
       // Firebase email password login
       loginWithEmailPassword(formData.email, formData.password)
@@ -41,7 +40,6 @@ const useLoginAuth = () => {
                   isLoading: false,
                   autoClose: 1500,
                });
-               // showToast("Login Successful!", "success");
                if (state !== null) {
                   navigate(state.prevUrl);
                } else {
@@ -57,7 +55,6 @@ const useLoginAuth = () => {
                   isLoading: false,
                   autoClose: 1500,
                });
-               // showToast("Incorrect email or password", "error");
             }
          });
    };
