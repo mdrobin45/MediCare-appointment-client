@@ -1,7 +1,9 @@
+import DashboardContainer from "../../../Containers/Dashboard/Patient/Dashboard/DashboardContainer";
+
 const PatientDashboard = () => {
    return (
       <div>
-         <h2>Patient dashboard</h2>
+         <DashboardContainer />
       </div>
    );
 };
