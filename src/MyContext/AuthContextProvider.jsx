@@ -17,7 +17,7 @@ export const AuthContext = createContext(null);
 const AuthContextProvider = ({ children }) => {
    const [user, setUser] = useState(null);
    const [isLoading, setIsLoading] = useState(true);
-   const { generateToken, clearToken } = usePublicApiRequest();
+   const { generateToken, clearToken, saveUserData } = usePublicApiRequest();
 
    // Auth provider
    const googleAuthProvider = new GoogleAuthProvider();
@@ -69,15 +69,15 @@ const AuthContextProvider = ({ children }) => {
          setUser(currentUser);
          setIsLoading(false);
          if (currentUser) {
-            const { displayName, email } = currentUser;
+            // Save user data to database
+            saveUserData({ email: currentUser?.email, role: "patient" });
 
             // Server token request
             generateToken({
-               name: displayName,
-               email: email,
+               email: currentUser?.email,
             });
          } else {
-            clearToken().then(() => console.log("Token clear"));
+            clearToken();
          }
       });
       return () => {

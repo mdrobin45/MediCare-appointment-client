@@ -29,7 +29,19 @@ const usePublicApiRequest = () => {
       return response;
    };
 
-   return { getAllDoctors, loadCurrentPageDoctor, generateToken, clearToken };
+   // Save user data to database after successful authentication
+   const saveUserData = async (userData) => {
+      const { data } = await publicAxiosRequest.post("/users", userData);
+      return data;
+   };
+
+   return {
+      getAllDoctors,
+      saveUserData,
+      loadCurrentPageDoctor,
+      generateToken,
+      clearToken,
+   };
 };
 
 export default usePublicApiRequest;

@@ -3,6 +3,7 @@ import axios from "axios";
 // Create axios instance
 const secureAxiosRequest = axios.create({
    baseURL: "http://localhost:3000",
+   withCredentials: true,
 });
 const useAxiosSecureInterceptor = () => {
    // Request interceptor

@@ -52,7 +52,7 @@ const adminNav = [
 const SideNavLink = (props) => {
    const { appearance, openKeys, expanded, onOpenChange, ...navProps } = props;
    const { user } = useAuth();
-   const admin = true;
+   const admin = false;
    return (
       <div style={styles}>
          <Sidenav
@@ -61,9 +61,9 @@ const SideNavLink = (props) => {
             openKeys={openKeys}
             onOpenChange={onOpenChange}>
             <Sidenav.Body>
-               <div>
+               <div className="w-40 h-40 rounded-full overflow-hidden my-6 mx-auto">
                   <img
-                     className="rounded-full mx-auto my-6"
+                     className="w-full h-full"
                      src={user?.photoURL}
                      alt="Profile"
                   />
