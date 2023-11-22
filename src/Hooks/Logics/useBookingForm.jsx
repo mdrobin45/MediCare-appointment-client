@@ -18,7 +18,6 @@ const initialFormValues = {
 
    bookingDate: moment(new Date()).format("DD MMM YYYY"),
 
-   adminStatus: "active",
    status: "pending",
 };
 const useBookingForm = () => {
