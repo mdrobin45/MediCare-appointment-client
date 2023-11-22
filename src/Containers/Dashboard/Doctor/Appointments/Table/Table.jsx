@@ -1,3 +1,6 @@
+import { FaPen } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
+import { IconButton } from "rsuite";
 const Table = ({ tableCols, appointments }) => {
    console.log(appointments);
    return (
@@ -43,6 +46,22 @@ const Table = ({ tableCols, appointments }) => {
                            } capitalize block text-center rounded-full text-sm font-medium me-2 px-2.5 py-0.5`}>
                            {item?.status}
                         </span>
+                     </td>
+                     <td className="px-6 py-4">
+                        <div className="flex gap-3">
+                           <IconButton
+                              className="bg-primary"
+                              appearance="primary"
+                              color="blue"
+                              icon={<FaPen className="text-xl" />}
+                           />
+                           <IconButton
+                              className="bg-red-500"
+                              appearance="primary"
+                              color="red"
+                              icon={<MdDelete className="text-xl" />}
+                           />
+                        </div>
                      </td>
                   </tr>
                ))}
