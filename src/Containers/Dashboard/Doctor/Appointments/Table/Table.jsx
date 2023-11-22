@@ -1,10 +1,8 @@
-import { FaPen } from "react-icons/fa6";
-import { MdDelete } from "react-icons/md";
-import { IconButton } from "rsuite";
+import { Button } from "rsuite";
 const Table = ({ tableCols, appointments }) => {
    console.log(appointments);
    return (
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                <tr>
@@ -49,18 +47,18 @@ const Table = ({ tableCols, appointments }) => {
                      </td>
                      <td className="px-6 py-4">
                         <div className="flex gap-3">
-                           <IconButton
+                           <Button
                               className="bg-primary"
                               appearance="primary"
-                              color="blue"
-                              icon={<FaPen className="text-xl" />}
-                           />
-                           <IconButton
+                              color="blue">
+                              Approve
+                           </Button>
+                           <Button
                               className="bg-red-500"
                               appearance="primary"
-                              color="red"
-                              icon={<MdDelete className="text-xl" />}
-                           />
+                              color="red">
+                              Cancel
+                           </Button>
                         </div>
                      </td>
                   </tr>
