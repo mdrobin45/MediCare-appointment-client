@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import useUserRole from "../../../Hooks/SharedHooks/useUserRole";
 
 const TableData = ({ appointment }) => {
-   const { doctor, meetDate, bookingDate, price, status } = appointment;
+   const { userRole } = useUserRole();
+   const { doctor, name, meetDate, bookingDate, price, status } = appointment;
    return (
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
          <th
             scope="row"
             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            {doctor.name}
+            {userRole === "doctor" ? name : doctor?.name}
          </th>
          <td className="px-6 py-4">{meetDate}</td>
          <td className="px-6 py-4">{bookingDate}</td>
@@ -31,7 +33,7 @@ const TableData = ({ appointment }) => {
          <td className="px-6 py-4">
             <Link
                to="/client"
-               class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+               className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
                View
             </Link>
          </td>

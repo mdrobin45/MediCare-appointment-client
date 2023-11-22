@@ -1,7 +1,9 @@
+import AppointmentsContainer from "../../../Containers/Dashboard/Doctor/Appointments/DoctorAppointmentsContainer";
+
 const DoctorAppointments = () => {
    return (
       <div>
-         <h2>Doctor Appointments</h2>
+         <AppointmentsContainer />
       </div>
    );
 };

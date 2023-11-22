@@ -35,12 +35,19 @@ const usePublicApiRequest = () => {
       return data;
    };
 
+   // Retrieve user role from database
+   const getUserRole = async (email) => {
+      const { data } = await publicAxiosRequest.get(`/users?email=${email}`);
+      return data;
+   };
+
    return {
       getAllDoctors,
       saveUserData,
       loadCurrentPageDoctor,
       generateToken,
       clearToken,
+      getUserRole,
    };
 };
 

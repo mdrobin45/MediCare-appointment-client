@@ -18,15 +18,28 @@ const useSecureApiRequest = () => {
       return response;
    };
 
-   // Fetch appointments by user
-   const getUserAppointments = async (email) => {
+   // Fetch patient appointments
+   const fetchPatientAppointments = async (email) => {
       const { data: response } = await secureAxiosRequest.get(
-         `/appointment/all?userEmail=${email}`
+         `/appointment/patient?userEmail=${email}`
       );
       return response;
    };
 
-   return { getSingleDoctor, postAppointment, getUserAppointments };
+   // Fetch patient appointments
+   const fetchDoctorsAppointments = async (email) => {
+      const { data: response } = await secureAxiosRequest.get(
+         `/appointment/doctor?userEmail=${email}`
+      );
+      return response;
+   };
+
+   return {
+      getSingleDoctor,
+      postAppointment,
+      fetchDoctorsAppointments,
+      fetchPatientAppointments,
+   };
 };
 
 export default useSecureApiRequest;

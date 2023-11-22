@@ -2,10 +2,10 @@ import { FaRegCalendarCheck } from "react-icons/fa";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { LuCalendarClock } from "react-icons/lu";
 import FeaturedCard from "../../../../../Components/Dashboard/FeaturedCard/FeaturedCard";
-import useGetAppointments from "../../../../../Hooks/SharedHooks/useGetAppointments";
+import usePatientAppointments from "../../../../../Hooks/SharedHooks/usePatientAppointments";
 
 const FeaturedContent = () => {
-   const userAppointments = useGetAppointments();
+   const userAppointments = usePatientAppointments();
 
    // All appointment count
    const totalAppointment = userAppointments.length;

@@ -5,6 +5,7 @@ import "./style.css";
 import { Nav, Sidenav } from "rsuite";
 import DashboardNavLink from "../Components/Dashboard/DashboardNavLink/DashboardNavLink";
 import useAuth from "../Hooks/SharedHooks/useAuth";
+import useUserRole from "../Hooks/SharedHooks/useUserRole";
 
 const styles = {
    width: 240,
@@ -32,7 +33,7 @@ const patientNav = [
 ];
 
 // Doctor nav links
-const adminNav = [
+const doctorNav = [
    {
       name: "Dashboard",
       link: "/doctor/dashboard",
@@ -49,10 +50,30 @@ const adminNav = [
       icon: <FaWheelchair />,
    },
 ];
+
+// Doctor nav links
+const adminNav = [
+   {
+      name: "Dashboard",
+      link: "/admin/dashboard",
+      icon: <FaTableColumns />,
+   },
+   {
+      name: "Appointments",
+      link: "/admin/appointments",
+      icon: <FaBriefcaseMedical />,
+   },
+   {
+      name: "All Doctors",
+      link: "/admin/all-doctors",
+      icon: <FaWheelchair />,
+   },
+];
 const SideNavLink = (props) => {
+   const { userRole } = useUserRole();
    const { appearance, openKeys, expanded, onOpenChange, ...navProps } = props;
    const { user } = useAuth();
-   const admin = false;
+
    return (
       <div style={styles}>
          <Sidenav
@@ -68,11 +89,35 @@ const SideNavLink = (props) => {
                      alt="Profile"
                   />
                </div>
-               {admin ? (
+               {userRole === "admin" ? (
                   <Nav {...navProps}>
                      {adminNav.map((nav, index) => (
                         <DashboardNavLink
-                           key={nav.index}
+                           key={index}
+                           url={nav.link}
+                           text={nav.name}
+                           icon={nav.icon}
+                           eventKey={index}
+                        />
+                     ))}
+                  </Nav>
+               ) : userRole === "patient" ? (
+                  <Nav {...navProps}>
+                     {patientNav.map((nav, index) => (
+                        <DashboardNavLink
+                           key={index}
+                           url={nav.link}
+                           text={nav.name}
+                           icon={nav.icon}
+                           eventKey={index}
+                        />
+                     ))}
+                  </Nav>
+               ) : userRole === "doctor" ? (
+                  <Nav {...navProps}>
+                     {doctorNav.map((nav, index) => (
+                        <DashboardNavLink
+                           key={index}
                            url={nav.link}
                            text={nav.name}
                            icon={nav.icon}
@@ -81,17 +126,7 @@ const SideNavLink = (props) => {
                      ))}
                   </Nav>
                ) : (
-                  <Nav {...navProps}>
-                     {patientNav.map((nav, index) => (
-                        <DashboardNavLink
-                           key={nav.index}
-                           url={nav.link}
-                           text={nav.name}
-                           icon={nav.icon}
-                           eventKey={index}
-                        />
-                     ))}
-                  </Nav>
+                  ""
                )}
             </Sidenav.Body>
          </Sidenav>
