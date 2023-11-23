@@ -19,7 +19,7 @@ const TableData = ({ appointment }) => {
                className={`${
                   status === "pending"
                      ? "bg-[#fff6e5] text-[#ffab01]"
-                     : status === "confirm"
+                     : status === "approved"
                      ? "bg-blue-100 text-blue-800"
                      : status === "complete"
                      ? "bg-green-100 text-green-800"

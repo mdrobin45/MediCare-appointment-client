@@ -1,8 +1,21 @@
 import { Button } from "rsuite";
+import useSecureApiRequest from "../../../../../Hooks/API/SecureApi/useSecureApiRequest";
+import useDoctorAppointments from "../../../../../Hooks/SharedHooks/useDoctorAppointments";
 const Table = ({ tableCols, appointments }) => {
-   console.log(appointments);
+   const { updateAptStatus } = useSecureApiRequest();
+   const { refetch } = useDoctorAppointments();
+
+   // approve appointment handler
+   const handleStatusUpdate = (id, status) => {
+      updateAptStatus(id, { status: status }).then((res) => {
+         if (res.id) {
+            refetch();
+            alert("Status updated");
+         }
+      });
+   };
    return (
-      <div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="w-[60rem] overflow-x-auto shadow-md sm:rounded-lg">
          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                <tr>
@@ -34,7 +47,7 @@ const Table = ({ tableCols, appointments }) => {
                            className={`${
                               item?.status === "pending"
                                  ? "bg-[#fff6e5] text-[#ffab01]"
-                                 : item?.status === "confirm"
+                                 : item?.status === "approved"
                                  ? "bg-blue-100 text-blue-800"
                                  : item?.status === "complete"
                                  ? "bg-green-100 text-green-800"
@@ -46,20 +59,41 @@ const Table = ({ tableCols, appointments }) => {
                         </span>
                      </td>
                      <td className="px-6 py-4">
-                        <div className="flex gap-3">
+                        {item?.status === "approved" ? (
                            <Button
-                              className="bg-primary"
+                              onClick={() => {
+                                 handleStatusUpdate(item?._id, "complete");
+                              }}
+                              className="bg-cyan-500"
                               appearance="primary"
-                              color="blue">
-                              Approve
+                              color="cyan">
+                              Complete
                            </Button>
-                           <Button
-                              className="bg-red-500"
-                              appearance="primary"
-                              color="red">
-                              Cancel
-                           </Button>
-                        </div>
+                        ) : item?.status === "complete" ||
+                          item?.status === "cancelled" ? (
+                           ""
+                        ) : (
+                           <div className="flex gap-3">
+                              <Button
+                                 onClick={() => {
+                                    handleStatusUpdate(item?._id, "approved");
+                                 }}
+                                 className="bg-primary"
+                                 appearance="primary"
+                                 color="blue">
+                                 Approve
+                              </Button>
+                              <Button
+                                 onClick={() => {
+                                    handleStatusUpdate(item?._id, "cancelled");
+                                 }}
+                                 className="bg-red-500"
+                                 appearance="primary"
+                                 color="red">
+                                 Cancel
+                              </Button>
+                           </div>
+                        )}
                      </td>
                   </tr>
                ))}

@@ -19,23 +19,33 @@ const useSecureApiRequest = () => {
    };
 
    // Fetch patient appointments
-   const fetchPatientAppointments = async (email) => {
+   const fetchPatientAppointments = async () => {
       const { data: response } = await secureAxiosRequest.get(
-         `/appointment/patient?userEmail=${email}`
+         `/appointment/patient`
       );
       return response;
    };
 
-   // Fetch patient appointments
-   const fetchDoctorsAppointments = async (email) => {
+   // Fetch doctor appointments
+   const fetchDoctorsAppointments = async () => {
       const { data: response } = await secureAxiosRequest.get(
-         `/appointment/doctor?userEmail=${email}`
+         `/appointment/doctor`
       );
       return response;
+   };
+
+   // appointment status update request
+   const updateAptStatus = async (id, status) => {
+      const { data } = await secureAxiosRequest.put(
+         `/appointment/update/${id}`,
+         status
+      );
+      return data;
    };
 
    return {
       getSingleDoctor,
+      updateAptStatus,
       postAppointment,
       fetchDoctorsAppointments,
       fetchPatientAppointments,

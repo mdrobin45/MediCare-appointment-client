@@ -14,7 +14,7 @@ const tableCols = [
    "Action",
 ];
 const DoctorAppointmentsContainer = () => {
-   const doctorAppointments = useDoctorAppointments();
+   const { doctorAppointments } = useDoctorAppointments();
    return (
       <>
          <Table tableCols={tableCols} appointments={doctorAppointments} />

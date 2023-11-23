@@ -7,13 +7,13 @@ const useDoctorAppointments = () => {
    const { fetchDoctorsAppointments } = useSecureApiRequest();
 
    // Request server for user appointment
-   let { data: doctorAppointments = [] } = useQuery({
+   let { refetch, data: doctorAppointments = [] } = useQuery({
       queryKey: ["userAppointment", user],
-      queryFn: () => fetchDoctorsAppointments(user?.email),
+      queryFn: () => fetchDoctorsAppointments(),
    });
    doctorAppointments = doctorAppointments.toReversed();
 
-   return doctorAppointments;
+   return { doctorAppointments, refetch };
 };
 
 export default useDoctorAppointments;

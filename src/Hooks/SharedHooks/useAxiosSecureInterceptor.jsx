@@ -1,11 +1,18 @@
 import axios from "axios";
+import useAuth from "./useAuth";
 
-// Create axios instance
-const secureAxiosRequest = axios.create({
-   baseURL: "http://localhost:3000",
-   withCredentials: true,
-});
 const useAxiosSecureInterceptor = () => {
+   const { user } = useAuth();
+
+   // Create axios instance
+   const secureAxiosRequest = axios.create({
+      baseURL: "http://localhost:3000",
+      withCredentials: true,
+      params: {
+         userEmail: user?.email,
+      },
+   });
+
    // Request interceptor
    secureAxiosRequest.interceptors.request.use((config) => {
       return config;
