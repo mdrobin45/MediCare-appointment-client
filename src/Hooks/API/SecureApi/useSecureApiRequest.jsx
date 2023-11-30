@@ -1,7 +1,9 @@
+import useAuth from "../../SharedHooks/useAuth";
 import useAxiosSecureInterceptor from "../../SharedHooks/useAxiosSecureInterceptor";
 
 const useSecureApiRequest = () => {
    const secureAxiosRequest = useAxiosSecureInterceptor();
+   const { user } = useAuth();
 
    // Fetch one doctor
    const getSingleDoctor = async (id) => {
@@ -21,7 +23,7 @@ const useSecureApiRequest = () => {
    // Fetch patient appointments
    const fetchPatientAppointments = async () => {
       const { data: response } = await secureAxiosRequest.get(
-         `/appointment/patient`
+         `/appointment/patient?email=${user?.email}`
       );
       return response;
    };
@@ -29,7 +31,7 @@ const useSecureApiRequest = () => {
    // Fetch doctor appointments
    const fetchDoctorsAppointments = async () => {
       const { data: response } = await secureAxiosRequest.get(
-         `/appointment/doctor`
+         `/appointment/doctor?email=${user?.email}`
       );
       return response;
    };

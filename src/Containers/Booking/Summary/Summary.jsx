@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 
 const Summary = ({ total, handleSubmit, isLoading }) => {
    const { state } = useLocation();
+   console.log(state);
    const { meetDate, meetTime, doctorName, selectedService } = state;
 
    return (

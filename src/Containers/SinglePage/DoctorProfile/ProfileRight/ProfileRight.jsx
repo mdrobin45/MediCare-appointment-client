@@ -1,7 +1,6 @@
 import { isBefore } from "date-fns";
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
-// import "react-day-picker/dist/style.css";
 import { useNavigate } from "react-router-dom";
 import { DatePicker } from "rsuite";
 import "./style.css";
@@ -16,7 +15,7 @@ const ProfileRight = ({ doctor }) => {
    const pastDate = moment().format("YYYY-MM-DD");
    const meetDate = moment(selectedDate).format("DD MMM YYYY");
    const selectedDay = moment(selectedDate).format("dddd");
-   const { _id, name, services, availability } = doctor;
+   const { _id, email, name, services, availability } = doctor;
 
    // Handle change and get input user value
    const handleServiceChange = (e) => {
@@ -46,10 +45,11 @@ const ProfileRight = ({ doctor }) => {
          meetTime: time,
          meetDate,
          doctorId: _id,
+         doctorEmail: email,
          doctorName: name,
          selectedService,
       }));
-   }, [meetDate, selectedService, time, name, _id]);
+   }, [meetDate, selectedService, time, name, email, _id]);
 
    // handle submit
    const handleSubmit = () => {

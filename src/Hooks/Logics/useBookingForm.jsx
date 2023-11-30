@@ -15,15 +15,13 @@ const initialFormValues = {
    gender: "male",
    age: "",
    note: "",
-
    bookingDate: moment(new Date()).format("DD MMM YYYY"),
-
    status: "pending",
 };
 const useBookingForm = () => {
    const { user } = useAuth();
    const { state } = useLocation();
-   const { meetDate, meetTime, doctorId, selectedService } = state;
+   const { meetDate, meetTime, doctorEmail, doctorId, selectedService } = state;
    const { postAppointment } = useSecureApiRequest();
 
    // Calculate services price
@@ -37,6 +35,7 @@ const useBookingForm = () => {
       meetTime,
       meetDate,
       doctor: doctorId,
+      doctorEmail: doctorEmail,
       price: totalPrice,
    });
 
