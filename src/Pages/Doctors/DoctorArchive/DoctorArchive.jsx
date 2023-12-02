@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import DoctorCard from "../../Components/DoctorCard/DoctorCard";
-import Pagination from "../../Components/Pagination/Pagination";
-import usePublicApiRequest from "../../Hooks/API/PublicApi/usePublicApiRequest";
+import DoctorCard from "../../../Components/DoctorCard/DoctorCard";
+import Pagination from "../../../Components/Pagination/Pagination";
+import usePublicApiRequest from "../../../Hooks/API/PublicApi/usePublicApiRequest";
 
 const DoctorArchive = () => {
    const [pageNumber, setPageNumber] = useState(1);

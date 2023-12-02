@@ -1,5 +1,5 @@
 import PageHeader from "../../Components/PageHeader/PageHeader";
-import DoctorArchive from "../../Containers/DoctorArchive/DoctorArchive";
+import DoctorArchive from "./DoctorArchive/DoctorArchive";
 
 const Doctors = () => {
    return (
