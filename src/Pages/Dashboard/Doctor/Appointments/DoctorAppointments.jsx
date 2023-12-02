@@ -13,7 +13,7 @@ const tableCols = [
    "Status",
    "Action",
 ];
-const DoctorAppointmentsContainer = () => {
+const DoctorAppointments = () => {
    const { doctorAppointments } = useDoctorAppointments();
    return (
       <>
@@ -22,4 +22,4 @@ const DoctorAppointmentsContainer = () => {
    );
 };
 
-export default DoctorAppointmentsContainer;
+export default DoctorAppointments;

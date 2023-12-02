@@ -3,7 +3,7 @@ import Dashboard from "../Layouts/Dashboard";
 import MainLayout from "../Layouts/MainLayout";
 import About from "../Pages/About/About";
 import Booking from "../Pages/Booking/Booking";
-import DoctorAppointments from "../Pages/Dashboard/Doctor/DoctorAppointments";
+import DoctorAppointments from "../Pages/Dashboard/Doctor/Appointments/DoctorAppointments";
 import DoctorDashboard from "../Pages/Dashboard/Doctor/DoctorDashboard";
 import MyPatients from "../Pages/Dashboard/Doctor/MyPatients";
 import PatientAppointments from "../Pages/Dashboard/Patient/PatientAppointments";
