@@ -2,8 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import useSecureApiRequest from "../API/SecureApi/useSecureApiRequest";
-import useAuth from "../SharedHooks/useAuth";
+import useSecureApiRequest from "../../../Hooks/API/SecureApi/useSecureApiRequest";
+import useAuth from "../../../Hooks/SharedHooks/useAuth";
 
 // Initial form values
 const initialFormValues = {
@@ -18,7 +18,7 @@ const initialFormValues = {
    bookingDate: moment(new Date()).format("DD MMM YYYY"),
    status: "pending",
 };
-const useBookingForm = () => {
+const useBookingLogic = () => {
    const { user } = useAuth();
    const { state } = useLocation();
    const { meetDate, meetTime, doctorEmail, doctorId, selectedService } = state;
@@ -80,4 +80,4 @@ const useBookingForm = () => {
    };
 };
 
-export default useBookingForm;
+export default useBookingLogic;

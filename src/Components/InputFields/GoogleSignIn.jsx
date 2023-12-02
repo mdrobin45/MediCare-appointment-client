@@ -1,4 +1,4 @@
-import useGoogleSignIn from "../../Hooks/Logics/useGoogleSignIn";
+import useGoogleSignIn from "../../Hooks/SharedHooks/useGoogleSignIn";
 
 const GoogleSignIn = () => {
    const handleGoogleSignIn = useGoogleSignIn();

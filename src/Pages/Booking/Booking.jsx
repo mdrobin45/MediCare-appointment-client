@@ -1,5 +1,5 @@
 import PageHeader from "../../Components/PageHeader/PageHeader";
-import Book from "../../Containers/Booking/Book";
+import Book from "../../Containers/Booking/BookingContainer";
 
 const Booking = () => {
    return (

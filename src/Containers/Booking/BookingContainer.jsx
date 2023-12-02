@@ -1,8 +1,8 @@
-import useBookingForm from "../../Hooks/Logics/useBookingForm";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
+import useBookingLogic from "./ServiceLogic/useBookingLogic";
 import Summary from "./Summary/Summary";
 
-const Book = () => {
+const BookingContainer = () => {
    const {
       appointmentData,
       setAppointmentData,
@@ -10,7 +10,7 @@ const Book = () => {
       handleSubmit,
       isPending,
       totalPrice,
-   } = useBookingForm();
+   } = useBookingLogic();
 
    return (
       <div className="px-2 mt-10 sm:px-6 lg:px-8 flex justify-between gap-10">
@@ -28,4 +28,4 @@ const Book = () => {
    );
 };
 
-export default Book;
+export default BookingContainer;

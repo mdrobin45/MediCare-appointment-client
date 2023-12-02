@@ -5,7 +5,7 @@ import FormSubmit from "../../Components/InputFields/FormSubmit";
 import GoogleSignIn from "../../Components/InputFields/GoogleSignIn";
 import PasswordField from "../../Components/InputFields/PasswordField";
 import TextField from "../../Components/InputFields/TextField";
-import useLoginAuth from "../../Hooks/Logics/useLoginAuth";
+import useLoginAuth from "./ServiceLogic/useLoginAuth";
 
 const LoginForm = () => {
    const { onChangeHandler, handleFormSubmit } = useLoginAuth();
