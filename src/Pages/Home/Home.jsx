@@ -1,7 +1,7 @@
-import About from "../../Containers/Home/About/About";
-import Banner from "../../Containers/Home/Banner/Banner";
-import Doctors from "../../Containers/Home/Doctors/Doctors";
-import Services from "../../Containers/Home/Services/Services";
+import About from "./About/About";
+import Banner from "./Banner/Banner";
+import Doctors from "./Doctors/Doctors";
+import Services from "./Services/Services";
 
 const Home = () => {
    return (
