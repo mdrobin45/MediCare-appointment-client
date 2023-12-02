@@ -1,96 +1,94 @@
-import axios from "axios";
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import AuthFormFooter from "../../Components/AuthFormFooter/AuthFormFooter";
 import AuthFormHeader from "../../Components/AuthFormHeader/AuthFormHeader";
 import FormSubmit from "../../Components/InputFields/FormSubmit";
 import GoogleSignIn from "../../Components/InputFields/GoogleSignIn";
 import PasswordField from "../../Components/InputFields/PasswordField";
 import TextField from "../../Components/InputFields/TextField";
-import { AuthContext } from "../../MyContext/AuthContextProvider";
-import { formValidation } from "../../Utils/regFormValidation";
+import useRegisterLogic from "./ServiceLogic/useRegisterLogic";
 
 const RegisterForm = () => {
-   const [errorMessage, setErrorMessage] = useState(null);
-   const { registerWithEmailPassword, profileUpdate } = useContext(AuthContext);
-   const navigate = useNavigate();
-   const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      photoUrl: "",
-      password: "",
-   });
+   const { errorMessage, onChangeHandler, handleFormSubmit } =
+      useRegisterLogic();
+   // const [errorMessage, setErrorMessage] = useState(null);
+   // const { registerWithEmailPassword, profileUpdate } = useContext(AuthContext);
+   // const navigate = useNavigate();
+   // const [formData, setFormData] = useState({
+   //    name: "",
+   //    email: "",
+   //    photoUrl: "",
+   //    password: "",
+   // });
 
-   // Onchange handler
-   const onChangeHandler = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-   };
+   // // Onchange handler
+   // const onChangeHandler = (e) => {
+   //    const { name, value } = e.target;
+   //    setFormData((prevData) => ({ ...prevData, [name]: value }));
+   // };
 
-   // Handle form submit
-   const handleFormSubmit = (e) => {
-      e.preventDefault();
-      const checkBox = e.target.checkbox.checked;
+   // // Handle form submit
+   // const handleFormSubmit = (e) => {
+   //    e.preventDefault();
+   //    const checkBox = e.target.checkbox.checked;
 
-      // Form Validation
-      const validationError = formValidation(
-         formData.name,
-         formData.email,
-         formData.password,
-         checkBox
-      );
+   //    // Form Validation
+   //    const validationError = formValidation(
+   //       formData.name,
+   //       formData.email,
+   //       formData.password,
+   //       checkBox
+   //    );
 
-      // Throw validation error
-      if (validationError) {
-         setErrorMessage(validationError);
-         return;
-      }
+   //    // Throw validation error
+   //    if (validationError) {
+   //       setErrorMessage(validationError);
+   //       return;
+   //    }
 
-      // Custom tost message
-      const toastMsg = toast.loading("");
-      toast.update(toastMsg, {
-         render: "Processing...",
-         isLoading: true,
-      });
+   //    // Custom tost message
+   //    const toastMsg = toast.loading("");
+   //    toast.update(toastMsg, {
+   //       render: "Processing...",
+   //       isLoading: true,
+   //    });
 
-      // Firebase email password signUp
-      registerWithEmailPassword(formData.email, formData.password)
-         .then((result) => {
-            if (result.user) {
-               profileUpdate({
-                  displayName: formData.name,
-                  photoURL: formData.photoUrl,
-               });
+   //    // Firebase email password signUp
+   //    registerWithEmailPassword(formData.email, formData.password)
+   //       .then((result) => {
+   //          if (result.user) {
+   //             profileUpdate({
+   //                displayName: formData.name,
+   //                photoURL: formData.photoUrl,
+   //             });
 
-               // Get access token from server
-               axios.post(
-                  `${import.meta.env.VITE_SERVER_API}/token`,
-                  {
-                     name: formData.name,
-                     email: formData.email,
-                  },
-                  { withCredentials: true }
-               );
+   //             // Get access token from server
+   //             axios.post(
+   //                `${import.meta.env.VITE_SERVER_API}/token`,
+   //                {
+   //                   name: formData.name,
+   //                   email: formData.email,
+   //                },
+   //                { withCredentials: true }
+   //             );
 
-               // Show toast
-               toast.update(toastMsg, {
-                  render: "Registration Successful!",
-                  type: "success",
-                  isLoading: false,
-               });
-               navigate("/");
-            }
-         })
-         .catch((err) => {
-            toast.update(toastMsg, {
-               render: "Registration failed!",
-               type: "error",
-               isLoading: false,
-            });
-            setErrorMessage(err.message);
-         });
-   };
+   //             // Show toast
+   //             toast.update(toastMsg, {
+   //                render: "Registration Successful!",
+   //                type: "success",
+   //                isLoading: false,
+   //             });
+   //             navigate("/");
+   //          }
+   //       })
+   //       .catch((err) => {
+   //          toast.update(toastMsg, {
+   //             render: "Registration failed!",
+   //             type: "error",
+   //             isLoading: false,
+   //          });
+   //          setErrorMessage(err.message);
+   //       });
+   // };
 
    return (
       <div className="mx-auto w-[26rem] border rounded-md shadow-md">

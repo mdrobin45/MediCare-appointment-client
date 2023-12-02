@@ -1,4 +1,4 @@
-import RegisterForm from "../../Containers/Register/RegisterForm";
+import RegisterForm from "./RegisterForm";
 
 const Register = () => {
    return (
