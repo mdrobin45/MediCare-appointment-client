@@ -36,6 +36,7 @@ const Table = ({ tableCols, appointments }) => {
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {item?.name}
                      </th>
+
                      <td className="px-6 py-4">{item?.email}</td>
                      <td className="px-6 py-4">{item?.age}</td>
                      <td className="px-6 py-4 capitalize">{item?.gender}</td>

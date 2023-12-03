@@ -1,5 +1,4 @@
 import { useMutation } from "@tanstack/react-query";
-import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import useSecureApiRequest from "../../../Hooks/API/SecureApi/useSecureApiRequest";
@@ -15,7 +14,6 @@ const initialFormValues = {
    gender: "male",
    age: "",
    note: "",
-   bookingDate: moment(new Date()).format("DD MMM YYYY"),
    status: "pending",
 };
 const useBookingLogic = () => {

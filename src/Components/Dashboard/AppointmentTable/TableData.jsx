@@ -1,9 +1,10 @@
+import moment from "moment";
 import { Link } from "react-router-dom";
 import useUserRole from "../../../Hooks/SharedHooks/useUserRole";
 
 const TableData = ({ appointment }) => {
    const { userRole } = useUserRole();
-   const { doctor, name, meetDate, bookingDate, price, status } = appointment;
+   const { doctor, createdAt, name, meetDate, price, status } = appointment;
    return (
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
          <th
@@ -12,7 +13,9 @@ const TableData = ({ appointment }) => {
             {userRole === "doctor" ? name : doctor?.name}
          </th>
          <td className="px-6 py-4">{meetDate}</td>
-         <td className="px-6 py-4">{bookingDate}</td>
+         <td className="px-6 py-4">
+            {moment(createdAt).format("DD MMM YYYY")}
+         </td>
          <td className="px-6 py-4">${price}</td>
          <td className="px-6 py-4">
             <span

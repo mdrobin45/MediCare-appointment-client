@@ -1,7 +1,9 @@
+import PatientChart from "./PatientChart/PatientChart";
+
 const DoctorDashboard = () => {
    return (
       <div>
-         <h2>Doctor Dashboard</h2>
+         <PatientChart />
       </div>
    );
 };
