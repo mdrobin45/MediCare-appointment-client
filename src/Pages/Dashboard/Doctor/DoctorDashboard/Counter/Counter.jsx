@@ -5,7 +5,7 @@ import { MdFreeCancellation } from "react-icons/md";
 import FeaturedCard from "../../../../../Components/Dashboard/FeaturedCard/FeaturedCard";
 import useDoctorAppointments from "../../../../../Hooks/SharedHooks/useDoctorAppointments";
 
-const Counter = ({ props }) => {
+const Counter = () => {
    const { doctorAppointments } = useDoctorAppointments();
    const totalCount = doctorAppointments.length;
    const pendingCount = doctorAppointments.filter(
