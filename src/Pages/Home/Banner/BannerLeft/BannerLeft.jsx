@@ -1,6 +1,5 @@
-import { FaUserDoctor } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-
+import Button from "@mui/material/Button";
+import { Link as RouterLink } from "react-router-dom";
 const BannerLeft = () => {
    return (
       <div className="w-full md:w-2/4">
@@ -15,12 +14,9 @@ const BannerLeft = () => {
             It is a established fact that a reader will be distracted by the
             content of a page when looking at this layout.
          </p>
-         <Link
-            to="#"
-            className="text-white my-3 bg-primary transition-all border border-primary focus:outline-none font-medium rounded-lg text-md px-3 py-2 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
-            Meet a Doctor
-            <FaUserDoctor className="text-md ml-2" />
-         </Link>
+         <Button component={RouterLink} to="/about" variant="contained">
+            Meed Doctor
+         </Button>
          <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left py-4">
             <div className="my-4 md:my-0">
                <h2 className="font-bold text-gray-800 text-4xl">355k+</h2>
