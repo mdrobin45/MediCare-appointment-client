@@ -1,4 +1,3 @@
-import { Button } from "rsuite";
 import useSecureApiRequest from "../../../../../Hooks/API/SecureApi/useSecureApiRequest";
 import useDoctorAppointments from "../../../../../Hooks/SharedHooks/useDoctorAppointments";
 const Table = ({ tableCols, appointments }) => {
@@ -61,38 +60,32 @@ const Table = ({ tableCols, appointments }) => {
                      </td>
                      <td className="px-6 py-4">
                         {item?.status === "approved" ? (
-                           <Button
+                           <button
                               onClick={() => {
                                  handleStatusUpdate(item?._id, "complete");
                               }}
-                              className="bg-cyan-500"
-                              appearance="primary"
-                              color="cyan">
+                              className="bg-cyan-500">
                               Complete
-                           </Button>
+                           </button>
                         ) : item?.status === "complete" ||
                           item?.status === "cancelled" ? (
                            ""
                         ) : (
                            <div className="flex gap-3">
-                              <Button
+                              <button
                                  onClick={() => {
                                     handleStatusUpdate(item?._id, "approved");
                                  }}
-                                 className="bg-primary"
-                                 appearance="primary"
-                                 color="blue">
+                                 className="bg-primary">
                                  Approve
-                              </Button>
-                              <Button
+                              </button>
+                              <button
                                  onClick={() => {
                                     handleStatusUpdate(item?._id, "cancelled");
                                  }}
-                                 className="bg-red-500"
-                                 appearance="primary"
-                                 color="red">
+                                 className="bg-red-500">
                                  Cancel
-                              </Button>
+                              </button>
                            </div>
                         )}
                      </td>

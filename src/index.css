@@ -1,5 +1,13 @@
-body {
-   font-family: "Inter", sans-serif !important;
+@tailwind base; /* Preflight will be injected here */
+
+@tailwind components;
+
+@tailwind utilities;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 p {
    color: #5c728e;

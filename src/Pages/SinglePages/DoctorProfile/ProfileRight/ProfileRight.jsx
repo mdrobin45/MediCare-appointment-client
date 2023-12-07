@@ -1,8 +1,6 @@
-import { isBefore } from "date-fns";
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DatePicker } from "rsuite";
 import "./style.css";
 
 const ProfileRight = ({ doctor }) => {
@@ -64,7 +62,7 @@ const ProfileRight = ({ doctor }) => {
             <p className="text-gray-300">Monday to Friday: 09:00Am-05:00PM</p>
          </div>
          <div className="p-6">
-            <DatePicker
+            {/* <DatePicker
                value={selectedDate}
                onChange={setSelectedDate}
                shouldDisableDate={(date) => isBefore(date, new Date(pastDate))}
@@ -72,7 +70,7 @@ const ProfileRight = ({ doctor }) => {
                format="dd-MM-yyyy"
                oneTap
                style={{ width: "100%" }}
-            />
+            /> */}
             <div className="my-6">
                <ul className="grid grid-cols-3 gap-y-3 w-full">
                   {availability.map(

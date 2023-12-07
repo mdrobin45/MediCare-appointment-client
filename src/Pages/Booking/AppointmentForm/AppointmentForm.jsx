@@ -1,4 +1,3 @@
-import { Radio, RadioGroup } from "rsuite";
 import TextField from "../../../Components/BookingFormFields/TextField";
 
 const AppointmentForm = ({
@@ -56,7 +55,7 @@ const AppointmentForm = ({
                   />
                ))}
             </div>
-            <RadioGroup
+            {/* <RadioGroup
                className="mt-4"
                inline
                name="gender"
@@ -69,7 +68,7 @@ const AppointmentForm = ({
                }>
                <Radio value="male">Male</Radio>
                <Radio value="female">Female</Radio>
-            </RadioGroup>
+            </RadioGroup> */}
             <div className="w-full mt-4">
                <div className="relative w-full min-w-[200px]">
                   <textarea

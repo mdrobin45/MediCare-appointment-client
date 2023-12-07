@@ -3,7 +3,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { Rate } from "rsuite";
+
 import "./style.css";
 
 const DoctorCard = ({ doctor }) => {
@@ -29,13 +29,13 @@ const DoctorCard = ({ doctor }) => {
          <p>{tagline}</p>
          <div className="flex items-center gap-2 pb-3">
             <div className="flex items-center gap-1">
-               <Rate
+               {/* <Rate
                   className="docRatingCard"
                   size="xs"
                   readOnly
                   defaultValue={ratings}
                   allowHalf
-               />
+               /> */}
             </div>
             <span>({feedback})</span>
          </div>

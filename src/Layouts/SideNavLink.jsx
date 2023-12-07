@@ -2,8 +2,6 @@ import { FaBriefcaseMedical, FaWallet, FaWheelchair } from "react-icons/fa";
 import { FaTableColumns } from "react-icons/fa6";
 import "./style.css";
 
-import { Nav, Sidenav } from "rsuite";
-import DashboardNavLink from "../Components/Dashboard/DashboardNavLink/DashboardNavLink";
 import useAuth from "../Hooks/SharedHooks/useAuth";
 import useUserRole from "../Hooks/SharedHooks/useUserRole";
 
@@ -76,7 +74,7 @@ const SideNavLink = (props) => {
 
    return (
       <div style={styles}>
-         <Sidenav
+         {/* <Sidenav
             appearance={appearance}
             expanded={expanded}
             openKeys={openKeys}
@@ -129,7 +127,7 @@ const SideNavLink = (props) => {
                   ""
                )}
             </Sidenav.Body>
-         </Sidenav>
+         </Sidenav> */}
       </div>
    );
 };
