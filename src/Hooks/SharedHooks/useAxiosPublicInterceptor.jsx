@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance
 const publicAxiosRequest = axios.create({
-   baseURL: "http://localhost:3000",
+   baseURL: import.meta.env.VITE_SERVER_API,
    withCredentials: true,
 });
 

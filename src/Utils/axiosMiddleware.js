@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosMiddleware = axios.create({
-   baseURL: "http://localhost:3000",
+   baseURL: import.meta.env.VITE_SERVER_API,
    withCredentials: true,
 });

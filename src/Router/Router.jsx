@@ -14,6 +14,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import DoctorProfile from "../Pages/SinglePages/DoctorProfile/DoctorProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
    {
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
          },
          {
             path: "/booking",
-            element: <Booking />,
+            element: (
+               <PrivateRoute>
+                  <Booking />
+               </PrivateRoute>
+            ),
          },
          {
             path: "/doctors/:id",
