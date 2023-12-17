@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AboutRight = () => {
    return (
-      <div className="w-full md:w-2/4">
+      <div>
          <h3 className="text-md md:text-xl text-secondary font-semibold">
             About Us
          </h3>

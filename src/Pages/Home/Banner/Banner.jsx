@@ -17,8 +17,7 @@ const Banner = () => {
             <Box
                sx={{
                   display: "flex",
-               }}
-               className="flex flex-col md:flex-row md:items-center md:justify-between">
+               }}>
                <BannerLeft />
                <BannerRight />
             </Box>
