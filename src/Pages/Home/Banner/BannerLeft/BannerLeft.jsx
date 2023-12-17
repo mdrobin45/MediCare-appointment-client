@@ -1,8 +1,8 @@
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 const BannerLeft = () => {
    return (
-      <div className="w-full md:w-2/4">
+      <Box className="w-full md:w-2/4">
          <Typography sx={{ color: "primary.main" }} variant="subtitle">
             Welcome to MadiCare
          </Typography>
@@ -26,7 +26,7 @@ const BannerLeft = () => {
             variant="custom">
             Meet Doctor
          </Button>
-         <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left py-4">
+         {/* <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left py-4">
             <div className="my-4 md:my-0">
                <h2 className="font-bold text-gray-800 text-4xl">355k+</h2>
                <p>Recovered Patients</p>
@@ -39,8 +39,8 @@ const BannerLeft = () => {
                <h2 className="font-bold text-gray-800 text-4xl">120+</h2>
                <p>Popular Doctors</p>
             </div>
-         </div>
-      </div>
+         </div> */}
+      </Box>
    );
 };
 
