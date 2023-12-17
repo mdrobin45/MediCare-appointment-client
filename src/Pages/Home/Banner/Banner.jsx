@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import Container from "../../../Components/Container/Container";
 import BannerLeft from "./BannerLeft/BannerLeft";
 import BannerRight from "./BannerRight/BannerRight";
 
@@ -12,13 +13,16 @@ const Banner = () => {
             backgroundSize: "cover",
          }}
          className="py-32">
-         <Box sx={{
-            display:'flex',
-            
-         }} className="flex flex-col md:flex-row md:items-center md:justify-between px-2 sm:px-6 lg:px-8">
-            <BannerLeft />
-            <BannerRight />
-         </Box>
+         <Container>
+            <Box
+               sx={{
+                  display: "flex",
+               }}
+               className="flex flex-col md:flex-row md:items-center md:justify-between">
+               <BannerLeft />
+               <BannerRight />
+            </Box>
+         </Container>
       </Box>
    );
 };
