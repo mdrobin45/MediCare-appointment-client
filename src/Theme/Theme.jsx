@@ -10,7 +10,25 @@ const theme = createTheme({
       },
    },
    typography: {
-      fontFamily: "Inter",
+      fontFamily: ["Open Sans", "sans-serif"].join(","),
+   },
+   components: {
+      MuiButton: {
+         variants: [
+            {
+               props: { variant: "custom" },
+               style: {
+                  textTransform: "capitalize",
+                  background: "#007bff",
+                  color: "white",
+                  fontWeight: "400",
+                  "&:hover": {
+                     background: "#007bff",
+                  },
+               },
+            },
+         ],
+      },
    },
 });
 

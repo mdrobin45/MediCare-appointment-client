@@ -1,21 +1,30 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 const BannerLeft = () => {
    return (
       <div className="w-full md:w-2/4">
-         <h3 className="text-md md:text-xl text-secondary">
+         <Typography sx={{ color: "primary.main" }} variant="subtitle">
             Welcome to MadiCare
-         </h3>
-         <h1 className="text-4xl lg:text-6xl font-bold py-3">
-            We Are <span className="text-primary">Committed</span> To Your
-            Health
-         </h1>
-         <p>
+         </Typography>
+         <Typography sx={{ fontWeight: "bold" }} variant="h2">
+            We Are{" "}
+            <Typography
+               variant="h2"
+               sx={{ color: "primary.main", fontWeight: "bold" }}>
+               Committed
+            </Typography>{" "}
+            To Your Health
+         </Typography>
+         <Typography variant="body1">
             It is a established fact that a reader will be distracted by the
             content of a page when looking at this layout.
-         </p>
-         <Button component={RouterLink} to="/about" variant="contained">
-            Meed Doctor
+         </Typography>
+         <Button
+            sx={{ mt: 1 }}
+            component={RouterLink}
+            to="/about"
+            variant="custom">
+            Meet Doctor
          </Button>
          <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left py-4">
             <div className="my-4 md:my-0">
