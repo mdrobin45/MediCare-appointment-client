@@ -11,23 +11,6 @@ const AboutLeft = () => {
                alt="Image"
             />
          </Box>
-
-         <Box
-            sx={{
-               position: "absolute",
-               width: "20rem",
-               right: "4rem",
-               bottom: "-5rem",
-               top: "10rem",
-               borderRadius: "10px",
-            }}>
-            <Box
-               component="img"
-               sx={{ height: 300, width: 250, borderRadius: "10px" }}
-               src="https://html.themefax.com/madifax/images/about_img2.jpg"
-               alt="Image"
-            />
-         </Box>
       </Box>
    );
 };

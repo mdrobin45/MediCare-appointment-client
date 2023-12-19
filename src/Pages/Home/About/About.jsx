@@ -4,12 +4,12 @@ import AboutRight from "./AboutRight/AboutRight";
 
 const About = () => {
    return (
-      <Container maxWidth="lg">
+      <Container sx={{ py: "5rem" }} maxWidth="lg">
          <Grid container spacing={2}>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
                <AboutLeft />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
                <AboutRight />
             </Grid>
          </Grid>
