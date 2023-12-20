@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { BsArrowRight } from "react-icons/bs";
 import { FaCapsules } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -9,24 +9,35 @@ const ServiceCard = () => {
          <Box sx={{ position: "relative" }}>
             <Box
                component="img"
-               sx={{ borderRadius: "20px", width: "100%" }}
-               className="rounded-xl w-full"
+               sx={{ borderRadius: "10px", width: "100%" }}
                src="https://html.themefax.com/madifax/images/service-2.jpg"
                alt="Image"
             />
-            <span className=" absolute -bottom-6 right-6 bg-[#F7588D] p-2 rounded-xl">
+            <Box
+               sx={{
+                  position: "absolute",
+                  bottom: "-1.5rem",
+                  right: "1.5rem",
+                  bgcolor: "#F7588D",
+                  padding: "10px",
+                  borderRadius: "10px",
+               }}>
                <FaCapsules className="text-white text-4xl" />
-            </span>
+            </Box>
          </Box>
 
-         <h2 className="text-2xl font-bold py-3">Diagnose & Research</h2>
-         <p className="pb-3">
+         <Typography
+            variant="h2"
+            sx={{ fontSize: "20px", fontWeight: "bold", py: "10px" }}>
+            Diagnose & Research
+         </Typography>
+         <Typography variant="body" className="pb-3">
             Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit. Rem
             quia officia quaerat ipsam hic sunt quaerat!
-         </p>
-         <Link className="text-primary flex items-center gap-2" to="/">
+         </Typography>
+         <Button sx={{ mt: "5px" }} variant="text" component={Link} to="/">
             Read More <BsArrowRight />
-         </Link>
+         </Button>
       </Box>
    );
 };
